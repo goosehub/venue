@@ -32,7 +32,7 @@ else{
   <div class="col-md-12" >
   <center>
 <?php
-//Banner
+								//Banner
 //Set on timer
 $today = date("His");
 if ($today >= 160000 && $today <= 220000) {
@@ -48,8 +48,12 @@ if ($today >= 160000 && $today <= 220000) {
 <img src="banners/calendar.png" id="calendar" class="img-responsive" alt="Responsive image" >
 </center></div></div>
 
+
     <div class="row">
       <div class="col-md-4">
+
+								<!-- The forum/extended discussion part of the site -->
+
       <div class="white">
         <center><font size="6"><span class="glyphicon glyphicon-arrow-left"></span>
       	Once in a lifetime
@@ -68,25 +72,34 @@ if ($today >= 160000 && $today <= 220000) {
 </form></center>
       	</div>
       </div>
-      <div class="col-md-4" id="centerdiv"><center>
+      <div class="col-md-4" id="centerdiv"><cenyoutube viewerter>
+
+      							<!-- youtube viewer -->
 <img class="videobuttons" width="8%" src="banners/previous.gif">
     <embed id="video" width="80%" height="250px" src="//www.youtube.com/embed/NOcjwN3jkZ4?autoplay=1" frameborder="0" allowfullscreen></embed>
 <img class="videobuttons" width="8%" src="banners/next.gif">
+
+								<!-- controls -->
 <form>
 <input type="submit" value="Talk">
 <input type="submit" value="Shout">
 <input type="submit" value="Watch">
 <input type="submit" value="Show">
 <input type="submit" value="Share">
-
 </form>
 <br>
+
+								<!-- images -->
 <img width="8%" src="banners/previous.gif">
 <img src="images/smokingman.jpg" width="80%" height="80%" class="img-rounded">
 <img width="8%" src="banners/next.gif">
+
+
     </center></div>
       <div class="col-md-4">
       <div class="white">
+
+      							<!-- shoutbox -->
       <div id="shoutbox">
       <a href="http://wwww.link.xyz"><center>
       	<font size="6"><span class="glyphicon glyphicon-arrow-left"></span>
@@ -94,7 +107,7 @@ if ($today >= 160000 && $today <= 220000) {
       	<span class="glyphicon glyphicon-arrow-right"></span></font><br>
       	<font size="2">http://wwww.link.xyz</font>
       	</center></a></div>
-
+								<!-- chatroom -->
       	<form>
 <input type="text" name="firstname" class="form-control">
 </form>

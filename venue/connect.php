@@ -7,7 +7,7 @@ $database   = 'venue';
 
 
 // Create connection
-$con= new mysqli("localhost","root","","talk");
+$con= new mysqli("localhost","root","","venue");
 
 // Check connection
 if (mysqli_connect_errno()) {
