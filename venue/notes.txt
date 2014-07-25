@@ -1,0 +1,26 @@
+			REMEMBER
+					LINK turned into shout
+
+Schedule
+Banner and/or Background
+Video
+Image
+Shout
+Chat
+Conversation
+Control Panel
+
+Control Panel
+	Video
+	Image
+	Shout
+	Schedule
+		Image of Calendar
+		Request form
+
+Learn to
+	Tie a table to a table for replies
+	Expand schedule across the screen
+	Alternate background colors for chat
+	Background image
+	Responsive design

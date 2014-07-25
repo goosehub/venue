@@ -1,0 +1,38 @@
+html, body {
+    max-width: 100%;
+    height:100%;
+    overflow-x: hidden;
+    background: url('banners/1347919245877.jpg');
+}
+.white {
+	background-color: white;
+	border: 20px white solid;
+	border-radius:10px;
+	box-shadow: 5px 5px 5px;
+}
+#video {
+	Overflow: hidden;
+}
+#centerdiv {
+	Display: inline;
+}
+.videobuttons {
+	margin-top:-250px;
+}
+#calendar {
+	Position: absolute;
+	Top: 10px;
+	Left: 10px;
+	Width:6%
+}
+#chatbox {
+	Height: 470px;
+	Overflow-y: scroll;
+}
+#talkbox {
+	Height: 470px;
+	Overflow-y: scroll;
+}
+#shoutbox {
+	margin-top:-40px;
+}
