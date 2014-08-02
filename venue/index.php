@@ -13,7 +13,7 @@
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 	<!-- custom stylesheet -->
-<link type="text/css" rel="stylesheet" href="venuestyle.css" />
+<link type="text/css" rel="stylesheet" href="venuestyle.css">
 </head>
 <body>
 <?php
@@ -21,18 +21,23 @@
 //include 'connect.php';
 //prompt for username before creating page
 include 'login.php';
+include 'connect.php';
 if(!isset($_SESSION['name'])){
     loginForm();
 }
 else{
-	//begin page content
+  //begin page content
 ?>
 
+
+
+
+
 <div class="row">
-  <div class="col-md-12" >
+  <div class="col-md-12">
   <center>
 <?php
-								//Banner
+                //Banner
 //Set on timer
 $today = date("His");
 if ($today >= 160000 && $today <= 220000) {
@@ -52,103 +57,251 @@ if ($today >= 160000 && $today <= 220000) {
     <div class="row">
       <div class="col-md-4">
 
-								<!-- The forum/extended discussion part of the site -->
+								<!-- Talk -->
 
-      <div class="white">
-        <center><font size="6"><span class="glyphicon glyphicon-arrow-left"></span>
-      	Once in a lifetime
-      	<span class="glyphicon glyphicon-arrow-right"></span></font></center>
-      	<div id="talkbox">
-      	<p><!-- -->
-      	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia.</p><br><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; It is a paradisematic country, in which roasted parts of sentences fly into your mouth. Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p><br><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The Big Oxmox advised her not to do so, because there were thousands of bad Commas, wild Question Marks and devious Semikoli, but the Little Blind Text didn’t listen. She packed her seven versalia, put her initial into the belt and made herself on the way. When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane. Pityful a rethoric question ran over her cheek, then she continued her way. 
-      	<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia.</p><br><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; It is a paradisematic country, in which roasted parts of sentences fly into your mouth. Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p><br><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The Big Oxmox advised her not to do so, because there were thousands of bad Commas, wild Question Marks and devious Semikoli, but the Little Blind Text didn’t listen. She packed her seven versalia, put her initial into the belt and made herself on the way. When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane. Pityful a rethoric question ran over her cheek, then she continued her way. 
-      	<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia.</p><br><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; It is a paradisematic country, in which roasted parts of sentences fly into your mouth. Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p><br><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The Big Oxmox advised her not to do so, because there were thousands of bad Commas, wild Question Marks and devious Semikoli, but the Little Blind Text didn’t listen. She packed her seven versalia, put her initial into the belt and made herself on the way. When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane. Pityful a rethoric question ran over her cheek, then she continued her way. 
-      	<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia.</p><br><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; It is a paradisematic country, in which roasted parts of sentences fly into your mouth. Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p><br><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The Big Oxmox advised her not to do so, because there were thousands of bad Commas, wild Question Marks and devious Semikoli, but the Little Blind Text didn’t listen. She packed her seven versalia, put her initial into the belt and made herself on the way. When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane. Pityful a rethoric question ran over her cheek, then she continued her way. 
-      	<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia.</p><br><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; It is a paradisematic country, in which roasted parts of sentences fly into your mouth. Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p><br><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The Big Oxmox advised her not to do so, because there were thousands of bad Commas, wild Question Marks and devious Semikoli, but the Little Blind Text didn’t listen. She packed her seven versalia, put her initial into the belt and made herself on the way. When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane. Pityful a rethoric question ran over her cheek, then she continued her way. 
-      	</p>
+      <div class="white" id="talkBox">
+            <div class="row">
+  <div class="col-md-2 col-xs-2">
+  	<button type="button" class="btn btn-default btn-default active" id="talkPrevious">
+  	<font size="6"><span class="glyphicon glyphicon-arrow-left"></span></font>
+  	</button>
+  </div>
+  <div class="col-md-8 col-xs-8">
+      <span id="talkTitleContainer">
+      <?php
+$sqlTalk = "SELECT *
+              FROM talk
+              WHERE id = ( SELECT MAX(id) FROM talk ) ;";
+
+if ($resultTalk = mysqli_query($con, $sqlTalk))
+{
+          while($row = mysqli_fetch_assoc($resultTalk)) 
+          {
+$_SESSION['talkid'] = $row['id'];
+  echo '<center><font size="5">'.$row['title'].'</font><br><font size="2">By '.$row['user'].'</font></center> ';
+}
+}
+?>
+        </span>
+  </div>
+  <div class="col-md-2 col-xs-2">
+  <button type="button" class="btn btn-default btn-default active" id="talkNext">
+  	<font size="6"><span class="glyphicon glyphicon-arrow-right"></span></font>
+  	</button>
+</div>
       	</div>
-      	<center><form>
-<input type="submit" value="Respond">
-</form></center>
+      	<div id="talkScroll">
+      	<span id="talkPostContainer">
+        <?php
+$sqlTalk = "SELECT *
+              FROM talk
+              WHERE id = ( SELECT MAX(id) FROM talk ) ;";
+
+if ($resultTalk = mysqli_query($con, $sqlTalk))
+{
+          while($row = mysqli_fetch_assoc($resultTalk)) 
+          {
+$_SESSION['talkid'] = $row['id'];
+  echo '<left><p>'.$row['post'].'</p></left> ';
+}
+}
+?>
+              	</span>
+      	</div>
       	</div>
       </div>
-      <div class="col-md-4" id="centerdiv"><cenyoutube viewerter>
 
-      							<!-- youtube viewer -->
-<img class="videobuttons" width="8%" src="banners/previous.gif">
-    <embed id="video" width="80%" height="250px" src="//www.youtube.com/embed/NOcjwN3jkZ4?autoplay=1" frameborder="0" allowfullscreen></embed>
-<img class="videobuttons" width="8%" src="banners/next.gif">
 
-								<!-- controls -->
+
+
+
+
+
+
+
+
+
+
+      <div class="col-md-4" id="centerDiv"><center>
+
+      							<!-- watch -->
+
+<img id="watchPrevious" class="videoButtons" width="8%" src="banners/previous.gif">
+<span id="watchContainer">
+<?php
+$sqlwatch = "SELECT *
+              FROM watch
+              WHERE id = ( SELECT MAX(id) FROM watch ) ;";
+
+if ($resultwatch = mysqli_query($con, $sqlwatch))
+{
+          while($row = mysqli_fetch_assoc($resultwatch)) 
+          {
+$_SESSION['watchid'] = $row['id'];
+  echo '<embed width="80%" height="250" src="//www.youtube.com/embed/'.trim($row['watchid']).'" frameborder="0" allowfullscreen></embed>';
+}
+}
+?>
+</span>
+<img id="watchNext" class="videoButtons" width="8%" src="banners/next.gif">
+
+
+
+
+
+
+
+
+
+
+
+								<!-- controls and input display-->
+<div id="inputBox">
 <form>
-<input type="submit" value="Talk">
-<input type="submit" value="Shout">
-<input type="submit" value="Watch">
-<input type="submit" value="Show">
-<input type="submit" value="Share">
+<button type="button" id="talkControl" class="btn btn-default">Talk</button>
+<button type="button" id="shoutControl" class="btn btn-default">Shout</button>
+<button type="button" id="watchControl" class="btn btn-default">Watch</button>
+<button type="button" id="showControl" class="btn btn-default">Show</button>
+<button type="button" id="shareControl" class="btn btn-default">Share</button>
+<button type="button" id="leaveControl" class="btn btn-default">Leave</button>
 </form>
 <br>
-
-								<!-- images -->
-<img width="8%" src="banners/previous.gif">
-<img src="images/smokingman.jpg" width="80%" height="80%" class="img-rounded">
-<img width="8%" src="banners/next.gif">
+</div>
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+								<!-- show and continued input extension-->
+		<!-- showBox also acts as control panel -->
+<div id="showBox">
+<img id="showPrevious" width="8%" src="banners/previous.gif">
+<span id="showContainer">
+<?php
+$sqlShow = "SELECT *
+              FROM image
+              WHERE id = ( SELECT MAX(id) FROM image ) ;";
+
+if ($resultShow = mysqli_query($con, $sqlShow))
+{
+          while($row = mysqli_fetch_assoc($resultShow)) 
+          {
+$_SESSION['showid'] = $row['id'];
+  echo '<img src="images/'.trim($row['filename']).'" width="80%" height="80%" class="img-rounded">';
+}
+}
+?>
+</span>
+<img id="showNext" width="8%" src="banners/next.gif">
+</div>
     </center></div>
+
+
+
+
+
+
+
+
+
       <div class="col-md-4">
-      <div class="white">
+      <div class="white" id="shoutChatDiv">
 
       							<!-- shoutbox -->
-      <div id="shoutbox">
-      <a href="http://wwww.link.xyz"><center>
-      	<font size="6"><span class="glyphicon glyphicon-arrow-left"></span>
-      	Check it out!
-      	<span class="glyphicon glyphicon-arrow-right"></span></font><br>
-      	<font size="2">http://wwww.link.xyz</font>
-      	</center></a></div>
+
+      <div id="shoutBox">
+      <div class="row">
+  <div class="col-md-2 col-xs-2">
+  	<button type="button" class="btn btn-default btn-default active" id="shoutPrevious">
+  	<font size="6"><span class="glyphicon glyphicon-arrow-left"></span></font>
+  	</button>
+  </div>
+  <div class="col-md-8 col-xs-8">
+      <span id="shoutContainer">
+      <?php
+      $sqlshout = "SELECT *
+              FROM shout
+              WHERE id = ( SELECT MAX(id) FROM shout ) ;";
+
+if ($resultshout = mysqli_query($con, $sqlshout))
+{
+          while($row = mysqli_fetch_assoc($resultshout)) 
+          {
+$_SESSION['shoutid'] = $row['id'];
+$aLink = trim($row['link']);
+  echo '<center>
+  <font size="4">
+  <a target="_blank" href="'.$aLink.'">
+  '.$row['title'].'</a></font><a target="_blank" href="'.$aLink.'">
+  <br><font size="2">'.$aLink.'</font>
+  </a>
+  </center>';
+}
+}
+?>
+  </span>
+  </div>
+  <div class="col-md-2 col-xs-2">
+  <button type="button" class="btn btn-default btn-default active" id="shoutNext">
+  	<font size="6"><span class="glyphicon glyphicon-arrow-right"></span></font>
+  	</button>
+  </div>
+</div>
+      	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
 								<!-- chatroom -->
-      	<form>
-<input type="text" name="firstname" class="form-control">
-</form>
+      	<form name="message" action="post/chatpost.php" method="post" enctype="multipart/form-data">
+		<input name="chatInput" type="text" class="form-control" id="chatInput">
+		<!-- submit button positioned off screen -->
+		<input name="submitChat" type="submit" id="submitChat" value="DICK" style="position: absolute; left: -9999px">
+		</form>
 
-<div id="chatbox">
-<strong><p>Paul McCartney</p></strong>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                      Away from the countries Vokalia and Consonantia. <p>
-<strong><p>John Lennon</p></strong>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                      A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth. <p>
-<strong><p>John Lennon</p></strong>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                      Duden flows by their place and supplies it with the necessary regelialia. <p>
-<strong><p>HarryGeorge</p></strong>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                      Yeah<p>
-<strong><p>ringo STAR</p></strong>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                      Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth. <p>
-<strong><p>John Lennon</p></strong>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                      Duden flows by their place and supplies it with the necessary regelialia. <p>    
-<strong><p>John Lennon</p></strong>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                      A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth. <p>
-
+<div id="chatBox">
+<span id="chatContainer">
+Loading...
+</span>
 </div>
       	</div>
       </div>
     </div>
 
 
+
+
+
+
+
+
 <?php 
 } //no content after this bracket 
 ?>
+<!--
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js"></script>
-<script type="text/javascript">
+-->
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="ajaxfileupload.js"></script>
+<script type="text/javascript" src="venuescript.js"></script>
 
-//javascript code
-
-</script>
-</body>
-</html>
+</body></html>

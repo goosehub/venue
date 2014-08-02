@@ -1,8 +1,7 @@
 <?php 
+include 'connect.php';
 
-include '../connect.php';
-
-$sql = "SELECT user, message, id 
+$sql = "SELECT *
             from chat
             ORDER BY id DESC;";
 

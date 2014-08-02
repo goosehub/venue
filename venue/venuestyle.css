@@ -7,32 +7,35 @@ html, body {
 .white {
 	background-color: white;
 	border: 20px white solid;
-	border-radius:10px;
 	box-shadow: 5px 5px 5px;
+	border-radius: 10px;
 }
 #video {
 	Overflow: hidden;
 }
-#centerdiv {
+#centerDiv {
 	Display: inline;
 }
-.videobuttons {
+.videoButtons {
 	margin-top:-250px;
 }
 #calendar {
 	Position: absolute;
 	Top: 10px;
-	Left: 10px;
+	Left: 20px;
 	Width:6%
 }
-#chatbox {
-	Height: 470px;
+#chatBox {
+	Height: 460px;
 	Overflow-y: scroll;
 }
-#talkbox {
-	Height: 470px;
+#talkBox {
+}
+#talkScroll {
+
+	Height: 450px;
 	Overflow-y: scroll;
 }
-#shoutbox {
-	margin-top:-40px;
+#shoutBox {
+	margin-top: -20px;
 }

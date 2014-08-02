@@ -1,19 +1,4 @@
-var showBox = '<?php include "showbox.php"; ?>';
-
-/*
-//insert into showBox variable
-//cancel out single quotes
-
-<?php session_start();
-$sql = "SELECT * FROM show WHERE id={$_SESSION['showid']}";
-if ($result = mysqli_query($con, $sql))
-{ while($row = mysqli_fetch_assoc($result)) {
-$_SESSION['showid'] = $row['id'];
-  echo '<img src="images/'.trim($row['filename']).'" width="80%" height="80%" class="img-rounded">';
-          } } ?>
-
-*/
-
+var talkPostBox = '';
 
 var watchPostBox =  '<img src="/venue/banners/videoid.jpg" class="img-responsive" alt="Responsive image"><br>' + 
 '<form action="" method="post" enctype="multipart/form-data" id="watchForm">' + 
@@ -156,9 +141,9 @@ $('#shoutControl').click(function(){
                 //flip buttons don't work after re-rendered.
                     //logic
                     //hide and unhide
-        $("#showContainer").on( "click", "#showPrevious", function(){
+        $("#showPrevious").click(function(){
         $.ajax({
-            url: "flip/showprevious.php",
+            url: "flip/shownext.php",
             cache: false,
             success: function(html){        
                 $("#showContainer").html(html);             
@@ -263,23 +248,20 @@ $('#watchControl').click(function(){
 
 
 
-                                        //chat
-
-                                //Load chat display
+                                    //chat
+//Load chat display
     function loadLog(){     
         $.ajax({
-            url: "control/chatcontrol.php",
+            url: "chatlogger.php",
             cache: false,
             success: function(html){        
-                $("#chatBox").html(html); //Insert chat log into the #chatbox div               
-            //Auto-scroll to bottom turned off, messages now added to top 
-            //locks user into viewing the bottom
-            //$("#chatBox").scrollTop($("#chatBox")[0].scrollHeight);
+                $("#chatBox").html(html);
+            //$("#chatbox").scrollTop($("#chatbox")[0].scrollHeight);
             }
         });
     }
 setInterval (loadLog, 500);   //refresh every half second 
-                                //chat post
+//chat input
 $("#submitChat").click(function(){   
     var clientchat = $("#chatInput").val();
     $.post("post/chatpost.php", {text: clientchat});              
@@ -287,5 +269,17 @@ $("#submitChat").click(function(){
     return false;
 });
 
+/*
+$('#shoutControl').click(function(){
+    $('#showBox').html(shoutPostBox);
+        $('#shoutContribute').click(function(){
+            $.post('post/shoutpost.php', $('#shoutForm').serialize());
+            loadShow();
+        });
+    $('.nevermind').click(function(){
+    loadShow();
+});
+});
+*/
 
 }); //end document ready
