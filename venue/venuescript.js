@@ -143,7 +143,7 @@ $('#shoutControl').click(function(){
                     //hide and unhide
         $("#showPrevious").click(function(){
         $.ajax({
-            url: "flip/shownext.php",
+            url: "flip/showprevious.php",
             cache: false,
             success: function(html){        
                 $("#showContainer").html(html);             
