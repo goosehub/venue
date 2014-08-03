@@ -1,4 +1,12 @@
-var talkPostBox = '';
+var talkPostTitle = '<center><form action="" method="post" enctype="multipart/form-data" id="talkForm">' + 
+'<input type="text" name="title" class="form-control" id="talkTitle" placeholder="Title" />';
+
+var talkPostBox = 
+'<center><br><textarea form="talkForm" name="post" class="form-control" rows="16" id="talkContent" placeholder="1000 character minimum" /></textarea>';
+
+var talkPostControl = '<button type="button" class="btn btn-default" id="talkContribute" >Contribute</button></form></center>' + 
+'<br><br><button type="button" class="btn btn-default nevermind">nevermind</button>';
+
 
 var watchPostBox =  '<img src="/venue/banners/videoid.jpg" class="img-responsive" alt="Responsive image"><br>' + 
 '<form action="" method="post" enctype="multipart/form-data" id="watchForm">' + 
@@ -26,6 +34,7 @@ var shoutPostBox = '<form action="" method="post" enctype="multipart/form-data" 
 
 
 $(document).ready(function(){
+                                        //for re-rendering after input take over
                 function loadShow(){     
         $.ajax({
             url: "showbox.php",
@@ -35,14 +44,26 @@ $(document).ready(function(){
                 }
                 });
                 }//end showBox ajax
+
+                function loadTalk(){     
+        $.ajax({
+            url: "talkTitleBox.php",
+            cache: false,
+            success: function(html){        
+                $("#talkPostTitle").html(html); 
+                }
+                });
+                $.ajax({
+            url: "talkPostBox.php",
+            cache: false,
+            success: function(html){        
+                $("#talkPostContainer").html(html); 
+                }
+                });
+        $('#talkPostControl').html('<button type="button" id="talkControl" class="btn btn-lg active">Talk</button>')
+                }
+
     //divided by section, not function
-
-
-
-
-
-
-
 
 
                             //talk
@@ -53,33 +74,49 @@ $(document).ready(function(){
             //hide and unhide
         $("#talkPrevious").click(function(){
         $.ajax({
-            url: "flip/talkprevious.php",
+            url: "flip/talktitleprevious.php",
             cache: false,
             success: function(html){        
-                $("#talkContainer").html(html);             
+                $("#talkPostTitle").html(html);             
+            }
+        });
+        $.ajax({
+            url: "flip/talkpostprevious.php",
+            cache: false,
+            success: function(html){        
+                $("#talkPostContainer").html(html);             
             }
         });
 });
         $("#talkNext").click(function(){
         $.ajax({
-            url: "flip/talknext.php",
+            url: "flip/talktitlenext.php",
             cache: false,
             success: function(html){        
-                $("#talkContainer").html(html);             
+                $("#talkPostTitle").html(html);             
+            }
+        });
+        $.ajax({
+            url: "flip/talkpostnext.php",
+            cache: false,
+            success: function(html){        
+                $("#talkPostContainer").html(html);             
             }
         });
 });
 
                     //talk post
 $('#talkControl').click(function(){
-    $('#showBox').html(talkPostBox);
+    $('#talkPostContainer').html(talkPostBox);
+    $('#talkPostControl').html(talkPostControl);
+    $('#talkPostTitle').html(talkPostTitle);
         $('#talkContribute').click(function(){
             $.post('post/talkpost.php', $('#talkForm').serialize());
-            loadShow();
+            loadTalk();
         });
     $('.nevermind').click(function(){
-    loadShow();
-});
+        loadTalk();
+    });
 });
 
 
@@ -223,7 +260,6 @@ $('#showControl').click(function(){
             }
         });
 });
-
                     //wath post
 $('#watchControl').click(function(){
     $('#showBox').html(watchPostBox);
@@ -268,18 +304,5 @@ $("#submitChat").click(function(){
     $("#chatInput").attr("value", "");
     return false;
 });
-
-/*
-$('#shoutControl').click(function(){
-    $('#showBox').html(shoutPostBox);
-        $('#shoutContribute').click(function(){
-            $.post('post/shoutpost.php', $('#shoutForm').serialize());
-            loadShow();
-        });
-    $('.nevermind').click(function(){
-    loadShow();
-});
-});
-*/
 
 }); //end document ready

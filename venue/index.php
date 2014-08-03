@@ -59,7 +59,9 @@ if ($today >= 160000 && $today <= 220000) {
 
 								<!-- Talk -->
 
-      <div class="white" id="talkBox">
+      <div class="white shadow" id="talkBox">
+            <!-- talk title -->
+      <span id="talkPostTitle">
             <div class="row">
   <div class="col-md-2 col-xs-2">
   	<button type="button" class="btn btn-default btn-default active" id="talkPrevious">
@@ -90,6 +92,8 @@ $_SESSION['talkid'] = $row['id'];
   	</button>
 </div>
       	</div>
+        </span>
+                <!-- talk content -->
       	<div id="talkScroll">
       	<span id="talkPostContainer">
         <?php
@@ -102,12 +106,18 @@ if ($resultTalk = mysqli_query($con, $sqlTalk))
           while($row = mysqli_fetch_assoc($resultTalk)) 
           {
 $_SESSION['talkid'] = $row['id'];
-  echo '<left><p>'.$row['post'].'</p></left> ';
+  echo '<left><p>'.nl2br($row['post']).'</p></left> ';
 }
 }
 ?>
               	</span>
       	</div>
+            <!-- talk controls -->
+        <center>
+        <span id="talkPostControl">
+<button type="button" id="talkControl" class="btn btn-lg active">Talk</button>
+</span>
+</center>
       	</div>
       </div>
 
@@ -122,10 +132,10 @@ $_SESSION['talkid'] = $row['id'];
 
 
 
-      <div class="col-md-4" id="centerDiv"><center>
+      <div class="col-md-4" id="centerDiv">
+      <center>
 
       							<!-- watch -->
-
 <img id="watchPrevious" class="videoButtons" width="8%" src="banners/previous.gif">
 <span id="watchContainer">
 <?php
@@ -138,7 +148,7 @@ if ($resultwatch = mysqli_query($con, $sqlwatch))
           while($row = mysqli_fetch_assoc($resultwatch)) 
           {
 $_SESSION['watchid'] = $row['id'];
-  echo '<embed width="80%" height="250" src="//www.youtube.com/embed/'.trim($row['watchid']).'" frameborder="0" allowfullscreen></embed>';
+  echo '<iframe width="80%" height="250" src="//www.youtube.com/embed/'.trim($row['watchid']).'" frameborder="0" allowfullscreen></iframe>';
 }
 }
 ?>
@@ -157,15 +167,13 @@ $_SESSION['watchid'] = $row['id'];
 
 								<!-- controls and input display-->
 <div id="inputBox">
-<form>
-<button type="button" id="talkControl" class="btn btn-default">Talk</button>
-<button type="button" id="shoutControl" class="btn btn-default">Shout</button>
-<button type="button" id="watchControl" class="btn btn-default">Watch</button>
-<button type="button" id="showControl" class="btn btn-default">Show</button>
-<button type="button" id="shareControl" class="btn btn-default">Share</button>
-<button type="button" id="leaveControl" class="btn btn-default">Leave</button>
-</form>
-<br>
+<br><form>
+<button type="button" id="watchControl" class="btn btn-default active shadow">Watch</button>
+<button type="button" id="showControl" class="btn btn-default active shadow">Show</button>
+<button type="button" id="shoutControl" class="btn btn-default active shadow">Shout</button>
+<button type="button" id="shareControl" class="btn btn-default active shadow">Share</button>
+<button type="button" id="leaveControl" class="btn btn-default active shadow">Leave</button>
+</form><br>
 </div>
 
 
@@ -185,9 +193,24 @@ $_SESSION['watchid'] = $row['id'];
 								<!-- show and continued input extension-->
 		<!-- showBox also acts as control panel -->
 <div id="showBox">
-<img id="showPrevious" width="8%" src="banners/previous.gif">
 <span id="showContainer">
 <?php
+$sqlShowPre = "SELECT *
+              FROM image
+              WHERE id = ( SELECT MIN(id) FROM image ) ;";
+              if ($resultShow = mysqli_query($con, $sqlShowPre))
+{
+          while($row = mysqli_fetch_assoc($resultShow)) 
+          {
+            if($row['id'] != $_SESSION['showid']) {
+              echo '<img id="showPrevious" width="8%" src="banners/previous.gif">';
+            } else {
+              echo '<img id="showPrevious" width="8%" src="banners/previous.gif" class="disabled">';
+            }
+            }
+          }
+
+
 $sqlShow = "SELECT *
               FROM image
               WHERE id = ( SELECT MAX(id) FROM image ) ;";
@@ -200,9 +223,23 @@ $_SESSION['showid'] = $row['id'];
   echo '<img src="images/'.trim($row['filename']).'" width="80%" height="80%" class="img-rounded">';
 }
 }
+
+$sqlShow = "SELECT *
+              FROM image
+              WHERE id = ( SELECT Max(id) FROM image ) ;";
+              if ($resultShow = mysqli_query($con, $sqlShow))
+{
+          while($row = mysqli_fetch_assoc($resultShow)) 
+          {
+            if($row['id'] != $_SESSION['showid']) {
+              echo '<img id="showNext" width="8%" src="banners/next.gif">';
+            } else {
+              echo '<img id="showPrevious" width="8%" src="banners/next.gif" class="disabled">';
+            }
+            }
+          }
 ?>
 </span>
-<img id="showNext" width="8%" src="banners/next.gif">
 </div>
     </center></div>
 
@@ -215,7 +252,7 @@ $_SESSION['showid'] = $row['id'];
 
 
       <div class="col-md-4">
-      <div class="white" id="shoutChatDiv">
+      <div class="white shadow" id="shoutChatDiv">
 
       							<!-- shoutbox -->
 
@@ -302,6 +339,7 @@ Loading...
 -->
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="ajaxfileupload.js"></script>
+<script type="text/javascript" src="fitvids.js"></script>
 <script type="text/javascript" src="venuescript.js"></script>
 
 </body></html>

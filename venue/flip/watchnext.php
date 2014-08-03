@@ -15,7 +15,7 @@ if ($result = mysqli_query($con, $sql))
 $_SESSION['watchid'] = $row['id'];
   //echo $current_id;
   //echo '<br>';
-  echo '<embed width="80%" height="250" src="//www.youtube.com/embed/'.trim($row['watchid']).'?autoplay=1" frameborder="0" allowfullscreen></embed>';
+  echo '<iframe width="80%" height="250" src="//www.youtube.com/embed/'.trim($row['watchid']).'?autoplay=1" frameborder="0" allowfullscreen></iframe>';
           }
 }
 
