@@ -28,16 +28,27 @@ html, body {
 	Width:6%
 }
 #chatBox {
-	Height: 460px;
+	Height: 520px;
 	Overflow-y: scroll;
 }
 #talkScroll {
 
-	Height: 420px;
+	Height: 460px;
 	Overflow-y: scroll;
 }
 #shoutBox {
 	Margin-top: -20px;
+}
+#showBox {
+	height:300px;
+	width:100%;
+}
+.img-rounded {
+   max-height: 100%;
+  max-width: 70%; 
+  height:inherit;
+  width:inherit;
+
 }
 textarea { 
 	Resize:vertical;
@@ -45,10 +56,6 @@ textarea {
 .shadow {
 		Box-shadow: 10px 10px 10px;
 }
-.img-rounded {
-	max-width: 100%; /* Add !important if needed. */
-	height: auto;    /* Add !important if needed. */
-}
 .disabled {
-	opacity: 0.8;
+	opacity: 0.0;
 }

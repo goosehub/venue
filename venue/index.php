@@ -8,10 +8,9 @@
 //echo $pagetitle;
 ?>
 </title>
-    <!-- bootstrap -->
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <!-- bootstrap style -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<!-- <link type="text/css" rel="stylesheet" href="resources/bootstrap.css"> -->
 	<!-- custom stylesheet -->
 <link type="text/css" rel="stylesheet" href="venuestyle.css">
 </head>
@@ -54,6 +53,12 @@ if ($today >= 160000 && $today <= 220000) {
 </center></div></div>
 
 
+
+
+
+
+
+
     <div class="row">
       <div class="col-md-4">
 
@@ -71,11 +76,11 @@ if ($today >= 160000 && $today <= 220000) {
   <div class="col-md-8 col-xs-8">
       <span id="talkTitleContainer">
       <?php
-$sqlTalk = "SELECT *
+$sql = "SELECT *
               FROM talk
               WHERE id = ( SELECT MAX(id) FROM talk ) ;";
 
-if ($resultTalk = mysqli_query($con, $sqlTalk))
+if ($resultTalk = mysqli_query($con, $sql))
 {
           while($row = mysqli_fetch_assoc($resultTalk)) 
           {
@@ -97,11 +102,11 @@ $_SESSION['talkid'] = $row['id'];
       	<div id="talkScroll">
       	<span id="talkPostContainer">
         <?php
-$sqlTalk = "SELECT *
+$sql = "SELECT *
               FROM talk
               WHERE id = ( SELECT MAX(id) FROM talk ) ;";
 
-if ($resultTalk = mysqli_query($con, $sqlTalk))
+if ($resultTalk = mysqli_query($con, $sql))
 {
           while($row = mysqli_fetch_assoc($resultTalk)) 
           {
@@ -139,11 +144,11 @@ $_SESSION['talkid'] = $row['id'];
 <img id="watchPrevious" class="videoButtons" width="8%" src="banners/previous.gif">
 <span id="watchContainer">
 <?php
-$sqlwatch = "SELECT *
+$sql = "SELECT *
               FROM watch
               WHERE id = ( SELECT MAX(id) FROM watch ) ;";
 
-if ($resultwatch = mysqli_query($con, $sqlwatch))
+if ($resultwatch = mysqli_query($con, $sql))
 {
           while($row = mysqli_fetch_assoc($resultwatch)) 
           {
@@ -154,11 +159,6 @@ $_SESSION['watchid'] = $row['id'];
 ?>
 </span>
 <img id="watchNext" class="videoButtons" width="8%" src="banners/next.gif">
-
-
-
-
-
 
 
 
@@ -185,56 +185,62 @@ $_SESSION['watchid'] = $row['id'];
 
 
 
-
-
-
-
-
 								<!-- show and continued input extension-->
 		<!-- showBox also acts as control panel -->
 <div id="showBox">
 <span id="showContainer">
 <?php
-$sqlShowPre = "SELECT *
+$sql = "SELECT *
+              FROM image
+              WHERE id = ( SELECT MAX(id) FROM image ) ;";
+
+if ($result = mysqli_query($con, $sql))
+{
+          while($row = mysqli_fetch_assoc($result)) 
+          {
+$_SESSION['showid'] = $row['id'];
+}
+}
+
+$sql = "SELECT *
               FROM image
               WHERE id = ( SELECT MIN(id) FROM image ) ;";
-              if ($resultShow = mysqli_query($con, $sqlShowPre))
+              if ($resultShow = mysqli_query($con, $sql))
 {
           while($row = mysqli_fetch_assoc($resultShow)) 
           {
             if($row['id'] != $_SESSION['showid']) {
               echo '<img id="showPrevious" width="8%" src="banners/previous.gif">';
             } else {
-              echo '<img id="showPrevious" width="8%" src="banners/previous.gif" class="disabled">';
+              echo '<img width="8%" src="banners/previous.gif" class="disabled">';
             }
             }
           }
 
 
-$sqlShow = "SELECT *
+$sql = "SELECT *
               FROM image
               WHERE id = ( SELECT MAX(id) FROM image ) ;";
 
-if ($resultShow = mysqli_query($con, $sqlShow))
+if ($resultShow = mysqli_query($con, $sql))
 {
           while($row = mysqli_fetch_assoc($resultShow)) 
           {
-$_SESSION['showid'] = $row['id'];
   echo '<img src="images/'.trim($row['filename']).'" width="80%" height="80%" class="img-rounded">';
 }
 }
 
-$sqlShow = "SELECT *
+$sql = "SELECT *
               FROM image
               WHERE id = ( SELECT Max(id) FROM image ) ;";
-              if ($resultShow = mysqli_query($con, $sqlShow))
+              if ($resultShow = mysqli_query($con, $sql))
 {
           while($row = mysqli_fetch_assoc($resultShow)) 
           {
             if($row['id'] != $_SESSION['showid']) {
               echo '<img id="showNext" width="8%" src="banners/next.gif">';
             } else {
-              echo '<img id="showPrevious" width="8%" src="banners/next.gif" class="disabled">';
+              echo '<img width="8%" src="banners/next.gif" class="disabled">';
             }
             }
           }
@@ -266,11 +272,11 @@ $sqlShow = "SELECT *
   <div class="col-md-8 col-xs-8">
       <span id="shoutContainer">
       <?php
-      $sqlshout = "SELECT *
+      $sql = "SELECT *
               FROM shout
               WHERE id = ( SELECT MAX(id) FROM shout ) ;";
 
-if ($resultshout = mysqli_query($con, $sqlshout))
+if ($resultshout = mysqli_query($con, $sql))
 {
           while($row = mysqli_fetch_assoc($resultshout)) 
           {
@@ -334,12 +340,15 @@ Loading...
 <?php 
 } //no content after this bracket 
 ?>
-<!--
+
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js"></script>
--->
-<script type="text/javascript" src="jquery.js"></script>
-<script type="text/javascript" src="ajaxfileupload.js"></script>
-<script type="text/javascript" src="fitvids.js"></script>
+
+<!-- <script type="text/javascript" src="resources/jquery.js"></script> -->
+<!-- Bootstrap script-->
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<!-- <script type="text/javascript" src="resources/bootstrap.js"></script> -->
+<!-- <script type="text/javascript" src="ajaxfileupload.js"></script> -->
+<!-- <script type="text/javascript" src="fitvids.js"></script> -->
 <script type="text/javascript" src="venuescript.js"></script>
 
 </body></html>
