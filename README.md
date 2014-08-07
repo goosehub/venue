@@ -15,6 +15,7 @@ SHORT TERM TODO
 LONG TERM TODO
 
   Dry
+  Less redundent sql queries
   Invalid upload alerts
   Security
   Improved visual design
