@@ -6,8 +6,7 @@ A content sharing community alpha
 
 SHORT TERM TODO
 
-  Functioning flip logic
-  Disabled flip buttons
+  Talk flip logic
   Image Upload
   Leave function
   Schedule framework and alpha
