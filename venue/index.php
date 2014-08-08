@@ -9,9 +9,9 @@
 ?>
 </title>
     <!-- bootstrap style -->
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 <!-- <link type="text/css" rel="stylesheet" href="resources/bootstrap.css"> -->
-	<!-- custom stylesheet -->
+  	<!-- custom stylesheet -->
 <link type="text/css" rel="stylesheet" href="venuestyle.css">
 </head>
 <body>
@@ -57,64 +57,35 @@ if ($today >= 160000 && $today <= 220000) {
 
 
 
-
-
+                <!-- left div -->
     <div class="row">
       <div class="col-md-4">
 
 								<!-- Talk -->
-
+      <span id="talkReload">
       <div class="white shadow" id="talkBox">
-            <!-- talk title -->
-      <span id="talkPostTitle">
-            <div class="row">
-  <div class="col-md-2 col-xs-2">
-  	<button type="button" class="btn btn-default btn-default active" id="talkPrevious">
-  	<font size="6"><span class="glyphicon glyphicon-arrow-left"></span></font>
-  	</button>
-  </div>
-  <div class="col-md-8 col-xs-8">
-      <span id="talkTitleContainer">
-      <?php
-$sql = "SELECT *
-              FROM talk
-              WHERE id = ( SELECT MAX(id) FROM talk ) ;";
-
-if ($resultTalk = mysqli_query($con, $sql))
-{
-          while($row = mysqli_fetch_assoc($resultTalk)) 
-          {
-$_SESSION['talkid'] = $row['id'];
-  echo '<center><font size="5">'.$row['title'].'</font><br><font size="2">By '.$row['user'].'</font></center> ';
-}
-}
-?>
+    <div class="row">
+    <span id="talkPostTitle">
+        <div class="col-md-2 col-xs-2">
+    <span id="talkPreviousButton">
+        <?php include 'flip/talkpreviousbuttonload.php' ?>
+    </span>
+    </div>
+    <div class="col-md-8 col-xs-8">
+    <span id="talkTitleContainer">
+        <?php include 'flip/talktitleload.php' ?>
+    </span>
+    </div>
+    <div class="col-md-2 col-xs-2">
+    <span id="talkNextButton">
+        <?php include 'flip/talknextbuttonload.php' ?>
+    </span>
+    </div>  	</div>
         </span>
-  </div>
-  <div class="col-md-2 col-xs-2">
-  <button type="button" class="btn btn-default btn-default active" id="talkNext">
-  	<font size="6"><span class="glyphicon glyphicon-arrow-right"></span></font>
-  	</button>
-</div>
-      	</div>
-        </span>
-                <!-- talk content -->
+                <!-- talk post -->
       	<div id="talkScroll">
       	<span id="talkPostContainer">
-        <?php
-$sql = "SELECT *
-              FROM talk
-              WHERE id = ( SELECT MAX(id) FROM talk ) ;";
-
-if ($resultTalk = mysqli_query($con, $sql))
-{
-          while($row = mysqli_fetch_assoc($resultTalk)) 
-          {
-$_SESSION['talkid'] = $row['id'];
-  echo '<left><p>'.nl2br($row['post']).'</p></left> ';
-}
-}
-?>
+        <?php include 'flip/talkpostload.php' ?>
               	</span>
       	</div>
             <!-- talk controls -->
@@ -123,6 +94,7 @@ $_SESSION['talkid'] = $row['id'];
 <button type="button" id="talkControl" class="btn btn-lg active">Talk</button>
 </span>
 </center>
+</span>
       	</div>
       </div>
 
@@ -131,36 +103,14 @@ $_SESSION['talkid'] = $row['id'];
 
 
 
-
-
-
-
-
-
+                    <!-- center div -->
       <div class="col-md-4" id="centerDiv">
       <center>
 
       							<!-- watch -->
-<img id="watchPrevious" class="videoButtons" width="8%" src="banners/previous.gif">
 <span id="watchContainer">
-<?php
-$sql = "SELECT *
-              FROM watch
-              WHERE id = ( SELECT MAX(id) FROM watch ) ;";
-
-if ($resultwatch = mysqli_query($con, $sql))
-{
-          while($row = mysqli_fetch_assoc($resultwatch)) 
-          {
-$_SESSION['watchid'] = $row['id'];
-  echo '<iframe width="80%" height="250" src="//www.youtube.com/embed/'.trim($row['watchid']).'" frameborder="0" allowfullscreen></iframe>';
-}
-}
-?>
+<?php include'flip/watchload.php' ?>
 </span>
-<img id="watchNext" class="videoButtons" width="8%" src="banners/next.gif">
-
-
 
 
 
@@ -179,137 +129,29 @@ $_SESSION['watchid'] = $row['id'];
 
 
 
-
-
-
-
-
-
 								<!-- show and continued input extension-->
 		<!-- showBox also acts as control panel -->
 <div id="showBox">
 <span id="showContainer">
-<?php
-$sql = "SELECT *
-              FROM image
-              WHERE id = ( SELECT MAX(id) FROM image ) ;";
-
-if ($result = mysqli_query($con, $sql))
-{
-          while($row = mysqli_fetch_assoc($result)) 
-          {
-$_SESSION['showid'] = $row['id'];
-}
-}
-
-$sql = "SELECT *
-              FROM image
-              WHERE id = ( SELECT MIN(id) FROM image ) ;";
-              if ($resultShow = mysqli_query($con, $sql))
-{
-          while($row = mysqli_fetch_assoc($resultShow)) 
-          {
-            if($row['id'] != $_SESSION['showid']) {
-              echo '<img id="showPrevious" width="8%" src="banners/previous.gif">';
-            } else {
-              echo '<img width="8%" src="banners/previous.gif" class="disabled">';
-            }
-            }
-          }
-
-
-$sql = "SELECT *
-              FROM image
-              WHERE id = ( SELECT MAX(id) FROM image ) ;";
-
-if ($resultShow = mysqli_query($con, $sql))
-{
-          while($row = mysqli_fetch_assoc($resultShow)) 
-          {
-  echo '<img src="images/'.trim($row['filename']).'" width="80%" height="80%" class="img-rounded">';
-}
-}
-
-$sql = "SELECT *
-              FROM image
-              WHERE id = ( SELECT Max(id) FROM image ) ;";
-              if ($resultShow = mysqli_query($con, $sql))
-{
-          while($row = mysqli_fetch_assoc($resultShow)) 
-          {
-            if($row['id'] != $_SESSION['showid']) {
-              echo '<img id="showNext" width="8%" src="banners/next.gif">';
-            } else {
-              echo '<img width="8%" src="banners/next.gif" class="disabled">';
-            }
-            }
-          }
-?>
+<?php include 'flip/showload.php' ?>
 </span>
 </div>
     </center></div>
 
 
 
-
-
-
-
-
-
+                    <!-- right div -->
       <div class="col-md-4">
       <div class="white shadow" id="shoutChatDiv">
 
       							<!-- shoutbox -->
 
       <div id="shoutBox">
-      <div class="row">
-  <div class="col-md-2 col-xs-2">
-  	<button type="button" class="btn btn-default btn-default active" id="shoutPrevious">
-  	<font size="6"><span class="glyphicon glyphicon-arrow-left"></span></font>
-  	</button>
-  </div>
-  <div class="col-md-8 col-xs-8">
       <span id="shoutContainer">
-      <?php
-      $sql = "SELECT *
-              FROM shout
-              WHERE id = ( SELECT MAX(id) FROM shout ) ;";
-
-if ($resultshout = mysqli_query($con, $sql))
-{
-          while($row = mysqli_fetch_assoc($resultshout)) 
-          {
-$_SESSION['shoutid'] = $row['id'];
-$aLink = trim($row['link']);
-  echo '<center>
-  <font size="4">
-  <a target="_blank" href="'.$aLink.'">
-  '.$row['title'].'</a></font><a target="_blank" href="'.$aLink.'">
-  <br><font size="2">'.$aLink.'</font>
-  </a>
-  </center>';
-}
-}
-?>
+      <?php include 'flip/shoutload.php' ?>
   </span>
-  </div>
-  <div class="col-md-2 col-xs-2">
-  <button type="button" class="btn btn-default btn-default active" id="shoutNext">
-  	<font size="6"><span class="glyphicon glyphicon-arrow-right"></span></font>
-  	</button>
-  </div>
 </div>
       	</div>
-
-
-
-
-
-
-
-
-
 
 
 
@@ -340,11 +182,10 @@ Loading...
 <?php 
 } //no content after this bracket 
 ?>
-
+  <!-- jQuery -->
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js"></script>
-
 <!-- <script type="text/javascript" src="resources/jquery.js"></script> -->
-<!-- Bootstrap script-->
+ <!-- Bootstrap script -->
 <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 <!-- <script type="text/javascript" src="resources/bootstrap.js"></script> -->
 <!-- <script type="text/javascript" src="ajaxfileupload.js"></script> -->

@@ -15,14 +15,12 @@ $_SESSION['showid'] = $row['id'];
 }
 }
 
-$sql = "SELECT * 
+$sql = "SELECT *
 FROM image
-WHERE id<{$_SESSION['showid']}
-ORDER BY id 
-DESC LIMIT 1;";
-              if ($resultShow = mysqli_query($con, $sql))
+WHERE id = ( SELECT MIN(id) FROM image ) ;";
+              if ($result = mysqli_query($con, $sql))
 {
-          while($row = mysqli_fetch_assoc($resultShow)) 
+          while($row = mysqli_fetch_assoc($result)) 
           {
             if($row['id'] != $_SESSION['showid']) {
               echo '<img id="showPrevious" width="8%" src="banners/previous.gif">';
@@ -34,9 +32,7 @@ DESC LIMIT 1;";
 
 $sql = "SELECT * 
 FROM image
-WHERE id={$_SESSION['showid']}
-ORDER BY id 
-DESC LIMIT 1;";
+WHERE id={$_SESSION['showid']};";
 
 if ($result = mysqli_query($con, $sql))
 {

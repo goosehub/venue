@@ -4,9 +4,8 @@ var talkPostTitle = '<center><form action="" method="post" enctype="multipart/fo
 var talkPostBox = 
 '<center><br><textarea form="talkForm" name="post" class="form-control" rows="16" id="talkContent" placeholder="1000 character minimum" /></textarea>';
 
-var talkPostControl = '<button type="button" class="btn btn-default" id="talkContribute" >Contribute</button></form></center>' + 
-'<br><br><button type="button" class="btn btn-default nevermind">nevermind</button>';
-
+var talkPostControl = '<br><button type="button" class="btn btn-lg active" id="talkContribute" >Contribute</button></form></center>' + 
+'<button class="disabled"></button> <button type="button" class="btn btn-lg active nevermind">nevermind</button>';
 
 var watchPostBox =  '<img src="/venue/banners/videoid.jpg" class="img-responsive" alt="Responsive image"><br>' + 
 '<form action="" method="post" enctype="multipart/form-data" id="watchForm">' + 
@@ -50,23 +49,13 @@ $(document).ready(function()
         {
             $.ajax(
             {
-                url: "talkTitleBox.php",
+                url: "talkreload.php",
                 cache: false,
                 success: function(html)
                 {
-                    $("#talkPostTitle").html(html);
+                    $("#talkReload").html(html);
                 }
             });
-            $.ajax(
-            {
-                url: "talkPostBox.php",
-                cache: false,
-                success: function(html)
-                {
-                    $("#talkPostContainer").html(html);
-                }
-            });
-            $('#talkPostControl').html('<button type="button" id="talkControl" class="btn btn-lg active">Talk</button>');
         }
 
 
@@ -78,18 +67,33 @@ $(document).ready(function()
 
 //talk
         //talk flip
-        //flip buttons don't work after re-rendered.
-        //logic
-        //hide and unhide
-    $("#talkPrevious").click(function()
-    {
+    $(document).on("click","#talkPrevious", function()    {
+
         $.ajax(
         {
             url: "flip/talktitleprevious.php",
             cache: false,
             success: function(html)
             {
-                $("#talkPostTitle").html(html);
+                $("#talkTitleContainer").html(html);
+            }
+        });
+        $.ajax(
+        {
+            url: "flip/talkpreviousbutton.php",
+            cache: false,
+            success: function(html)
+            {
+                $("#talkPreviousButton").html(html);
+            }
+        });
+        $.ajax(
+        {
+            url: "flip/talknextbutton.php",
+            cache: false,
+            success: function(html)
+            {
+                $("#talkNextButton").html(html);
             }
         });
         $.ajax(
@@ -102,7 +106,7 @@ $(document).ready(function()
             }
         });
     });
-    $("#talkNext").click(function()
+    $(document).on("click","#talkNext", function()    
     {
         $.ajax(
         {
@@ -110,7 +114,25 @@ $(document).ready(function()
             cache: false,
             success: function(html)
             {
-                $("#talkPostTitle").html(html);
+                $("#talkTitleContainer").html(html);
+            }
+        });
+        $.ajax(
+        {
+            url: "flip/talkpreviousbutton.php",
+            cache: false,
+            success: function(html)
+            {
+                $("#talkPreviousButton").html(html);
+            }
+        });
+                $.ajax(
+        {
+            url: "flip/talknextbutton.php",
+            cache: false,
+            success: function(html)
+            {
+                $("#talkNextButton").html(html);
             }
         });
         $.ajax(
@@ -124,8 +146,7 @@ $(document).ready(function()
         });
     });
     //talk post
-    $('#talkControl').click(function()
-    {
+    $(document).on("click","#talkControl", function()    {
         $('#talkPostContainer').html(talkPostBox);
         $('#talkPostControl').html(talkPostControl);
         $('#talkPostTitle').html(talkPostTitle);
@@ -145,8 +166,7 @@ $(document).ready(function()
 
 //watch
     //watch flip
-    $("#watchPrevious").click(function()
-    {
+    $(document).on("click","#watchPrevious", function()    {
         $.ajax(
         {
             url: "flip/watchprevious.php",
@@ -158,8 +178,7 @@ $(document).ready(function()
         });
     });
     //nextVideo
-    $("#watchNext").click(function()
-    {
+    $(document).on("click","#watchNext", function()    {
         $.ajax(
         {
             url: "flip/watchnext.php",
@@ -186,8 +205,6 @@ $(document).ready(function()
     });
 
 
-
-
 //show
     //flip
     //flip buttons don't work after re-rendered.
@@ -196,7 +213,7 @@ $(document).ready(function()
     /*$( "#aParentSelector" ).on( "click", "#showPrevious", function() {
       // $.ajax({ ... }) etc
     });*/
-    $(document).on("click","#showContainer #showPrevious", function()    {
+    $(document).on("click","#showPrevious", function()    {
         $.ajax(
         {
             url: "flip/showprevious.php",
@@ -208,7 +225,7 @@ $(document).ready(function()
         });
     });
     //nextVideo
-    $("#showContainer").on( "click", "#showNext", function()
+    $(document).on( "click", "#showNext", function()
     {
         $.ajax(
         {
@@ -268,8 +285,7 @@ $(document).ready(function()
     //flip buttons don't work after re-rendered.
     //logic
     //hide and unhide
-    $("#shoutPrevious").click(function()
-    {
+    $(document).on("click","#shoutPrevious", function()    {
         $.ajax(
         {
             url: "flip/shoutprevious.php",
@@ -280,8 +296,7 @@ $(document).ready(function()
             }
         });
     });
-    $("#shoutNext").click(function()
-    {
+    $(document).on("click","#shoutNext", function()    {
         $.ajax(
         {
             url: "flip/shoutnext.php",

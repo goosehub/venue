@@ -1,6 +1,7 @@
 <?php session_start();
-//video ajax
 include '../connect.php';
+
+      echo '<img id="watchPrevious" class="videoButtons" width="8%" src="banners/previous.gif">';
 
 $sql = "SELECT * 
 FROM watch
@@ -13,10 +14,22 @@ if ($result = mysqli_query($con, $sql))
           while($row = mysqli_fetch_assoc($result)) 
           {
 $_SESSION['watchid'] = $row['id'];
-  //echo $current_id;
-  //echo '<br>';
   echo '<iframe width="80%" height="250" src="//www.youtube.com/embed/'.trim($row['watchid']).'?autoplay=1" frameborder="0" allowfullscreen></iframe>';
           }
 }
 
+$sql = "SELECT *
+              FROM watch
+              WHERE id = ( SELECT MAX(id) FROM watch ) ;";
+              if ($result = mysqli_query($con, $sql))
+{
+          while($row = mysqli_fetch_assoc($result)) 
+          {
+            if($row['id'] != $_SESSION['watchid']) {
+      echo '<img id="watchNext" class="videoButtons" width="8%" src="banners/next.gif">';
+            } else {
+      echo '<img class="videoButtons disabled" width="8%" src="banners/next.gif">';
+            }
+            }
+          }
 ?>
