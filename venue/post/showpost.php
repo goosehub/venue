@@ -1,10 +1,11 @@
 <?php
+header ("Location: ../index.php");
 
 include '../connect.php';
 
+
      if($_SERVER['REQUEST_METHOD'] == 'POST')
 {
-    header("/venue/index.php");
 
 $image_info = getimagesize($_FILES["file"]["tmp_name"]);
 $image_width = $image_info[0];
@@ -32,12 +33,12 @@ if ((($_FILES["file"]["type"] == "image/gif")
     echo "Type: " . $_FILES["file"]["type"] . "<br>";
     echo "Size: " . ($_FILES["file"]["size"] / 1024) . " kB<br>";
     echo "Temp file: " . $_FILES["file"]["tmp_name"] . "<br>";
-    if (file_exists("../images/" . $_FILES["file"]["name"])) {
+    if (file_exists("upload/" . $_FILES["file"]["name"])) {
       echo $_FILES["file"]["name"] . " already exists. ";
     } else {
       move_uploaded_file($_FILES["file"]["tmp_name"],
       "../images/" . $_FILES["file"]["name"]);
-      echo "Stored in: " . "../image/" . $_FILES["file"]["name"];
+      echo "Stored in: " . "images/" . $_FILES["file"]["name"];
     }
   }
 } else {
@@ -52,4 +53,6 @@ $result = mysqli_query($con, $operation);
 
 }
 
-     	?>
+// exit;
+
+      ?>

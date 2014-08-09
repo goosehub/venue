@@ -35,22 +35,10 @@ else{
 <div class="row">
   <div class="col-md-12">
   <center>
-<?php
-                //Banner
-//Set on timer
-$today = date("His");
-if ($today >= 160000 && $today <= 220000) {
-    echo '<img src="/venue/banners/afternooncomedy.jpg" class="img-responsive" alt="Responsive image">';
-} elseif ($today >= 040000 && $today <= 100000) {
-    echo '<img src="/venue/banners/latenightstrange.jpg" class="img-responsive" alt="Responsive image">';
-} elseif ($today >= 100000 && $today <= 160000) {
-    echo '<img src="/venue/banners/sundaymorningcomics.jpg" class="img-responsive" alt="Responsive image">';
-} else {
-    echo '<img src="/venue/banners/truestories.jpg" class="img-responsive" alt="Responsive image">';
-}
-?>
-<img src="banners/calendar.png" id="calendar" class="img-responsive" alt="Responsive image" >
+<img src="banners/contribute.jpg" class="img-responsive" alt="Responsive image">
 </center></div></div>
+
+
 
 
 
@@ -121,8 +109,11 @@ if ($today >= 160000 && $today <= 220000) {
 <button type="button" id="watchControl" class="btn btn-default active shadow">Watch</button>
 <button type="button" id="showControl" class="btn btn-default active shadow">Show</button>
 <button type="button" id="shoutControl" class="btn btn-default active shadow">Shout</button>
+<!--
 <button type="button" id="shareControl" class="btn btn-default active shadow">Share</button>
+<button type="button" id="scheduleControl" class="btn btn-default active shadow">Schedule</button>
 <button type="button" id="leaveControl" class="btn btn-default active shadow">Leave</button>
+-->
 </form><br>
 </div>
 
@@ -137,6 +128,9 @@ if ($today >= 160000 && $today <= 220000) {
 </span>
 </div>
     </center></div>
+
+
+
 
 
 
@@ -156,8 +150,10 @@ if ($today >= 160000 && $today <= 220000) {
 
 
 
+
+
 								<!-- chatroom -->
-      	<form name="message" action="post/chatpost.php" method="post" enctype="multipart/form-data">
+      	<form name="message" id="chatForm" action="post/chatpost.php" method="post" enctype="multipart/form-data">
 		<input name="chatInput" type="text" class="form-control" id="chatInput">
 		<!-- submit button positioned off screen -->
 		<input name="submitChat" type="submit" id="submitChat" value="DICK" style="position: absolute; left: -9999px">
@@ -188,7 +184,7 @@ Loading...
  <!-- Bootstrap script -->
 <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 <!-- <script type="text/javascript" src="resources/bootstrap.js"></script> -->
-<!-- <script type="text/javascript" src="ajaxfileupload.js"></script> -->
+<script type="text/javascript" src="resources/ajaxfileupload.js"></script>
 <!-- <script type="text/javascript" src="fitvids.js"></script> -->
 <script type="text/javascript" src="venuescript.js"></script>
 

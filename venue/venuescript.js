@@ -14,11 +14,11 @@ var watchPostBox =  '<img src="/venue/banners/videoid.jpg" class="img-responsive
 '</form>' + 
 '<br><br><button type="button" class="btn btn-default nevermind">nevermind</button>';
 
-var showPostBox = '<form action="" method="post" id="showForm" enctype="multipart/form-data">' +
-        '<input type="file" class="btn btn-default" name="file" id="file"><br>' +
-        '<input type="submit"  class="btn btn-default" value="Contribute" id="showContribute"/>' +
-     '</form>' + 
-     '<br><br><button type="button" class="btn btn-default nevermind">nevermind</button>';
+var showPostBox = '<form action="post/showpost.php" method="post" id="showForm" enctype="multipart/form-data">' +
+'<input type="file" class="btn btn-default" name="file" id="file"><br>' +
+'<input type="submit"  class="btn btn-default" value="Contribute" id="showContribute"/>' +
+'</form>' + 
+'<br><br><button type="button" class="btn btn-default nevermind">nevermind</button>';
 
 var shoutPostBox = '<form action="" method="post" enctype="multipart/form-data" id="shoutForm">' + 
 '<div class="row"> <div class="col-md-2"></div> <div class="col-md-8">' +
@@ -49,7 +49,7 @@ $(document).ready(function()
         {
             $.ajax(
             {
-                url: "talkreload.php",
+                url: "flip/talkreload.php",
                 cache: false,
                 success: function(html)
                 {
@@ -57,6 +57,8 @@ $(document).ready(function()
                 }
             });
         }
+
+
 
 
                 //divided by section, not function
@@ -145,6 +147,27 @@ $(document).ready(function()
             }
         });
     });
+    //tab functional
+    $(document).on("keydown","textarea", function(e)    {
+    if(e.keyCode === 9) { // tab was pressed
+        // get caret position/selection
+        var start = this.selectionStart;
+            end = this.selectionEnd;
+
+        var $this = $(this);
+
+        // set textarea value to: text before caret + tab + text after caret
+        $this.val($this.val().substring(0, start)
+                    + "\t"
+                    + $this.val().substring(end));
+
+        // put caret at right position again
+        this.selectionStart = this.selectionEnd = start + 1;
+
+        // prevent the focus lose
+        return false;
+    }
+});
     //talk post
     $(document).on("click","#talkControl", function()    {
         $('#talkPostContainer').html(talkPostBox);
@@ -158,8 +181,10 @@ $(document).ready(function()
         $('.nevermind').click(function()
         {
             loadTalk();
+
         });
     });
+
 
 
 
@@ -237,43 +262,22 @@ $(document).ready(function()
             }
         });
     });
+
     //show post
-    /*$('#showControl').click(function()
+    $('#showControl').click(function()
     {
         //iframe instead?
         $('#showBox').html(showPostBox);
-        $('#showContribute').click(function()
+
+    $(document).on( "click", "#showContribute", function()
         {
-            //$.post('post/showpost.php', $('#showForm').serialize())
-            var formData = new FormData($('#showForm')[0]);
-            $.ajax(
-            {
-                url: 'post/showpost.php',
-                type: 'post',
-                xhr: function()
-                {
-                    var myXhr = $.ajaxSettings.xhr();
-                    if (myXhr.upload)
-                    {
-                        myXhr.upload.addEventListener('progress', progressHandlingFunction, false);
-                    }
-                    return myXhr;
-                },
-                beforeSend: beforeSendHandler,
-                success: completeHandler,
-                error: errorHandler,
-                data: formData,
-                cache: false,
-                contentType: false,
-                processData: false
-            });
-            loadShow();
+
         });
         $('.nevermind').click(function()
         {
             loadShow();
         });
-    });*/
+    });
     
 
 
@@ -350,7 +354,7 @@ $(document).ready(function()
         {
             text: clientchat
         });
-        $("#chatInput").attr("value", "");
+         $("#chatForm :input").val("");
         return false;
     });
 }); //end document ready

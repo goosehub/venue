@@ -8,7 +8,8 @@ include '../connect.php';
 	header("/venue/index.php");
 
 $title = $_POST['title'];
-$post = $_POST['post'];
+// $post = $_POST['post'];
+$post = mysql_real_escape_string($_POST['post']);
 $title = htmlentities($title);
 $post = htmlentities($post);
       $operationTalk = "INSERT INTO talk (title, user, post)

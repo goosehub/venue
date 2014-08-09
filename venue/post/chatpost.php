@@ -9,6 +9,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 	header("Location: /venue/index.php");
 
     $message = $_POST['text'];
+    $message = htmlentities($message);
 
 				$operation = "INSERT INTO
                     chat(user, message)
