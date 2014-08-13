@@ -29,7 +29,7 @@ else{
 ?>
 
 
-
+<div id="scheduleParent"></div>
 
 
 <div class="row">
@@ -37,11 +37,6 @@ else{
   <center>
 <img src="banners/contribute.jpg" class="img-responsive" alt="Responsive image">
 </center></div></div>
-
-
-
-
-
 
 
 
@@ -111,9 +106,9 @@ else{
 <button type="button" id="shoutControl" class="btn btn-default active shadow">Shout</button>
 <!--
 <button type="button" id="shareControl" class="btn btn-default active shadow">Share</button>
+-->
 <button type="button" id="scheduleControl" class="btn btn-default active shadow">Schedule</button>
 <button type="button" id="leaveControl" class="btn btn-default active shadow">Leave</button>
--->
 </form><br>
 </div>
 

@@ -20,9 +20,9 @@ $sql = "SELECT *
           while($row = mysqli_fetch_assoc($result)) 
           {
             if($row['id'] != $_SESSION['watchid']) {
-      echo '<img id="watchPrevious" class="videoButtons" width="8%" src="banners/previous.gif">';
+      echo '<img id="watchPrevious" class="videoButtons" width="8%" src="banners/prev.png">';
             } else {
-      echo '<img class="videoButtons disabled" width="8%" src="banners/previous.gif">';
+      echo '<img class="videoButtons disabled" width="8%" src="banners/prev.png">';
             }
             }
           }
@@ -40,6 +40,6 @@ $_SESSION['watchid'] = $row['id'];
 }
 }
 
-      echo '<img class="videoButtons disabled" width="8%" src="banners/next.gif">';
+      echo '<img class="videoButtons disabled" width="8%" src="banners/next.png">';
 
 ?>

@@ -59,3 +59,27 @@ textarea {
 .disabled {
 	opacity: 0.0;
 }
+#scheduleOverlap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 10;
+}
+#scheduleDisplay {
+    width: 50%;
+    height: 10%;
+    line-height: 200px;
+    position: fixed;
+    top: 25%; 
+    /*left: 35%;*/
+    margin-top: -10%;
+    margin-left: 25%;
+    /*background-color: #f35798;*/
+    border-radius: 5px;
+    text-align: center;
+    z-index: 11; /* 1px higher than the overlay layer */
+    display: none;
+}

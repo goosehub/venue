@@ -1,8 +1,7 @@
 <?php session_start();
-//video ajax
 include '../connect.php';
 
-              echo '<img id="showPrevious" width="8%" src="banners/previous.gif">';
+              echo '<img id="showPrevious" width="8%" src="banners/prev.png">';
 
 
 $sql = "SELECT * 
@@ -29,9 +28,9 @@ $sql = "SELECT *
           while($row = mysqli_fetch_assoc($resultShow)) 
           {
             if($row['id'] != $_SESSION['showid']) {
-              echo '<img id="showNext" width="8%" src="banners/next.gif">';
+              echo '<img id="showNext" width="8%" src="banners/next.png">';
             } else {
-              echo '<img width="8%" src="banners/next.gif" class="disabled">';
+              echo '<img width="8%" src="banners/next.png" class="disabled">';
             }
             }
           }

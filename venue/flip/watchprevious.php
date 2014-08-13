@@ -23,9 +23,9 @@ if ($result = mysqli_query($con, $sql))
           while($row = mysqli_fetch_assoc($result)) 
           {
             if($row['id'] != $_SESSION['watchid']) {
-      echo '<img id="watchPrevious" class="videoButtons" width="8%" src="banners/previous.gif">';
+      echo '<img id="watchPrevious" class="videoButtons" width="8%" src="banners/prev.png">';
             } else {
-      echo '<img class="videoButtons disabled" width="8%" src="banners/previous.gif">';
+      echo '<img class="videoButtons disabled" width="8%" src="banners/prev.png">';
             }
             }
         }
@@ -43,6 +43,6 @@ if ($result = mysqli_query($con, $sql))
           }
 }
 
-      echo '<img id="watchNext" class="videoButtons" width="8%" src="banners/next.gif">';
+      echo '<img id="watchNext" class="videoButtons" width="8%" src="banners/next.png">';
 
 ?>

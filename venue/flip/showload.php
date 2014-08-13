@@ -1,5 +1,6 @@
 <?php
 
+
 $sql = "SELECT *
               FROM image
               WHERE id = ( SELECT MAX(id) FROM image ) ;";
@@ -20,9 +21,9 @@ $sql = "SELECT *
           while($row = mysqli_fetch_assoc($result)) 
           {
             if($row['id'] != $_SESSION['showid']) {
-              echo '<img id="showPrevious" width="8%" src="banners/previous.gif">';
+              echo '<img id="showPrevious" width="8%" src="banners/prev.png">';
             } else {
-              echo '<img width="8%" src="banners/previous.gif" class="disabled">';
+              echo '<img width="8%" src="banners/prev.png" class="disabled">';
             }
             }
           }
@@ -40,6 +41,6 @@ if ($result = mysqli_query($con, $sql))
 }
 }
 
-              echo '<img width="8%" src="banners/next.gif" class="disabled">';
+              echo '<img width="8%" src="banners/next.png" class="disabled">';
 
 ?>

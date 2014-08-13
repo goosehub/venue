@@ -1,7 +1,7 @@
 <?php session_start();
 include '../connect.php';
 
-      echo '<img id="watchPrevious" class="videoButtons" width="8%" src="banners/previous.gif">';
+      echo '<img id="watchPrevious" class="videoButtons" width="8%" src="banners/prev.png">';
 
 $sql = "SELECT * 
 FROM watch
@@ -26,9 +26,9 @@ $sql = "SELECT *
           while($row = mysqli_fetch_assoc($result)) 
           {
             if($row['id'] != $_SESSION['watchid']) {
-      echo '<img id="watchNext" class="videoButtons" width="8%" src="banners/next.gif">';
+      echo '<img id="watchNext" class="videoButtons" width="8%" src="banners/next.png">';
             } else {
-      echo '<img class="videoButtons disabled" width="8%" src="banners/next.gif">';
+      echo '<img class="videoButtons disabled" width="8%" src="banners/next.png">';
             }
             }
           }

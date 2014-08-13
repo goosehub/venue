@@ -29,6 +29,12 @@ var shoutPostBox = '<form action="" method="post" enctype="multipart/form-data" 
 '</form>' + 
 '<br><br><button type="button" class="btn btn-default nevermind">nevermind</button>';
 
+var scheduleFoundation = '<div id="scheduleOverlap"><div id="scheduleDisplay">' + 
+'</div></div>';
+
+var scheduleDisplay = '<img src="banners/august.jpg" class="img-responsive" alt="Responsive image">' + 
+'<button type="button" id="scheduleReturn" class="btn btn-lg active shadow">Return</button>';
+
 $(document).ready(function()
 {
     //for re-rendering after input take over
@@ -40,7 +46,7 @@ $(document).ready(function()
             cache: false,
             success: function(html)
             {
-                $("#showBox").html(html);
+                $("#showContainer").html(html);
             }
         });
     }
@@ -217,7 +223,7 @@ $(document).ready(function()
     //wath post
     $('#watchControl').click(function()
     {
-        $('#showBox').html(watchPostBox);
+        $('#showContainer').html(watchPostBox);
         $('#watchContribute').click(function()
         {
             $.post('post/watchpost.php', $('#watchForm').serialize());
@@ -267,7 +273,7 @@ $(document).ready(function()
     $('#showControl').click(function()
     {
         //iframe instead?
-        $('#showBox').html(showPostBox);
+        $('#showContainer').html(showPostBox);
 
     $(document).on( "click", "#showContribute", function()
         {
@@ -314,7 +320,7 @@ $(document).ready(function()
     //shout post
     $('#shoutControl').click(function()
     {
-        $('#showBox').html(shoutPostBox);
+        $('#showContainer').html(shoutPostBox);
         $('#shoutContribute').click(function()
         {
             $.post('post/shoutpost.php', $('#shoutForm').serialize());
@@ -357,4 +363,25 @@ $(document).ready(function()
          $("#chatForm :input").val("");
         return false;
     });
+
+
+
+    $("#scheduleControl").click(function(){
+        $('#scheduleParent').html(scheduleFoundation); 
+        $('#scheduleDisplay').html(scheduleDisplay);
+        $('#scheduleDisplay').fadeIn( 1500 );
+    });
+
+
+
+    $("#leaveControl").click(function(){
+        window.location = 'leave.php';   
+    });
+
+
+    $(document).on("click","#scheduleReturn", function()  {
+          $('#scheduleParent').html(''); 
+    });
+
+
 }); //end document ready
