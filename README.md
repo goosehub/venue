@@ -6,17 +6,15 @@ A content sharing community alpha
 
 SHORT TERM TODO
 
-  Talk flip logic
-  Image Upload
-  Leave function
-  Schedule framework and alpha
-  Responsive design
+  Live Glitches
 
 LONG TERM TODO
 
   Dry
   Less redundent sql queries
   Invalid upload alerts
+  Asychronius Image Upload
+  Improved Responsiveness
   Security
   Improved visual design
   First and Last flip functions
