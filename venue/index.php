@@ -13,6 +13,10 @@
 <!-- <link type="text/css" rel="stylesheet" href="resources/bootstrap.css"> -->
   	<!-- custom stylesheet -->
 <link type="text/css" rel="stylesheet" href="venuestyle.css">
+<link type="text/css" rel="stylesheet" href="desktopStyle.css">
+<link type="text/css" rel="stylesheet" media='screen and (min-height: 1px) and (max-height: 700px) and (min-width: 991px)' href="netbookStyle.css">
+<link type="text/css" rel="stylesheet" media='screen and (min-width: 700px) and (max-width: 990px)' href="tabletStyle.css">
+<link type="text/css" rel="stylesheet" media='screen and (min-width: 1px) and (max-width: 699px)' href="phoneStyle.css">
 </head>
 <body>
 <?php

@@ -27,21 +27,8 @@ html, body {
 	Left: 20px;
 	Width:6%
 }
-#chatBox {
-	Height: 520px;
-	Overflow-y: scroll;
-}
-#talkScroll {
-
-	Height: 460px;
-	Overflow-y: scroll;
-}
 #shoutBox {
 	Margin-top: -20px;
-}
-#showBox {
-	height:300px;
-	width:100%;
 }
 .img-rounded {
    max-height: 100%;
