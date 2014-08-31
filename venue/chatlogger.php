@@ -11,7 +11,7 @@ if ($result = mysqli_query($con, $sql))
           {
                   if (! $row['user'] == "" && ! $row['message'] == "") {
                     echo '<strong>
-                    <font>'.$row['user'].'</font>
+                    <font class="chatName">'.$row['user'].'</font>
                       </strong><br><font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                       '.nl2br($row['message']).'<font><br>';
                     }

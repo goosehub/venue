@@ -49,10 +49,10 @@ if ($resultshout = mysqli_query($con, $sql))
           {
 $aLink = trim($row['link']);
   echo '<center>
-  <font size="4">
+  <font size="4" class="shoutTitleFont">
   <a target="_blank" href="'.$aLink.'">
   '.$row['title'].'</a></font><a target="_blank" href="'.$aLink.'">
-  <br><font size="2">'.$aLink.'</font>
+  <br><font size="2" class="shoutLinkFont">'.$aLink.'</font>
   </a>
   </center>';
 }

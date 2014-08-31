@@ -23,7 +23,7 @@ var showPostBox = '<form action="post/showpost.php" method="post" id="showForm" 
 var shoutPostBox = '<form action="" method="post" enctype="multipart/form-data" id="shoutForm">' + 
 '<div class="row"> <div class="col-md-2"></div> <div class="col-md-8">' +
 '<input type="text" name="title" class="form-control" id="shoutLink" placeholder="Short Description" /><br>' + 
-'<input type="text" name="link" class="form-control" id="shoutTitle" placeholder="Share a Link, or Leave your Contanct" /><br>' + 
+'<input type="text" name="link" class="form-control" id="shoutTitle" placeholder="Share a Link, or Leave your Contact" /><br>' + 
 '</div><div class="col-md-2"></div> </div>' + 
 '<input type="button" class="btn btn-default" value="Contribute" id="shoutContribute"/>' + 
 '</form>' + 

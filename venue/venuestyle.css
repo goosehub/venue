@@ -1,11 +1,52 @@
-html, body  {
-	height:100%;
-}
 html, body {
+    height:100%;
     max-width: 100%;
     overflow-x: hidden;
     background: url('banners/1347919245877.jpg');
 }
+@font-face {
+  font-family: "Averia";
+  src: url(Averia.ttf) format("truetype");
+}
+ @font-face {
+  font-family: "OpenSans";
+  src: url(OpenSans-Regular.ttf) format("truetype");
+} 
+ @font-face {
+  font-family: "Amatic";
+  src: url(Amatic.ttf) format("truetype");
+} 
+* {
+    font-family:  "OpenSans", serif;
+}
+.serif {
+    font-family:  "Averia", "OpenSans", serif;
+    letter-spacing: 0.1em;
+} 
+.skinny {
+    font-family:  "Amatic", "OpenSans", serif;
+    font-size: 1.5em;
+    letter-spacing: 0.15em;
+    word-spacing: 0.2em;
+    font-weight: bold;
+}
+.chatName {
+    font-family:  "Amatic", "OpenSans", serif;
+    font-size: 1.5em;
+    letter-spacing: 0.2em;
+}
+.shoutTitleFont {
+    font-family:  "Amatic", "OpenSans", serif;
+    letter-spacing: -0.05em;
+}
+.shoutLinkFont {
+    font-family:  monospace;
+    letter-spacing: -0.1em;
+}
+input {
+    letter-spacing: -0.05em;
+}
+
 .white {
 	background-color: white;
 	border: 20px white solid;

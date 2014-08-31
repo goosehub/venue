@@ -21,13 +21,13 @@ if ($result = mysqli_query($con, $sql))
           {
 $_SESSION['shoutid'] = $row['id']; 
 $aLink = trim($row['link']);
-	echo '<center>
-	<font size="4">
-	<a target="_blank" href="'.$aLink.'">
-	'.trim($row['title']).'</font>
-	<br><font size="2">'.trim($row['link']).'</font>
-	</a>
-	</center> ';
+  echo '<center>
+  <font size="4" class="shoutTitleFont">
+  <a target="_blank" href="'.$aLink.'">
+  '.$row['title'].'</a></font><a target="_blank" href="'.$aLink.'">
+  <br><font size="2" class="shoutLinkFont">'.$aLink.'</font>
+  </a>
+  </center>';
           }
 }
 

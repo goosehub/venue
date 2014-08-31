@@ -1,12 +1,9 @@
 <?php session_start(); ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!doctype html>
+<html lang="en">
 <head>
 <title>
-!CONSTRUCTION ZONE!
-<?php //create $pagetitle variable
-//echo $pagetitle;
-?>
+venue
 </title>
     <!-- bootstrap style -->
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
@@ -17,6 +14,9 @@
 <link type="text/css" rel="stylesheet" media='screen and (min-height: 1px) and (max-height: 700px) and (min-width: 991px)' href="responsive/netbookStyle.css">
 <link type="text/css" rel="stylesheet" media='screen and (min-width: 700px) and (max-width: 990px)' href="responsive/tabletStyle.css">
 <link type="text/css" rel="stylesheet" media='screen and (min-width: 1px) and (max-width: 699px)' href="responsive/phoneStyle.css">
+    <!-- favicon -->
+<link rel="shortcut icon" href="venueIcon.ico">
+
 </head>
 <body>
 <?php
