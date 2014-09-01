@@ -19,9 +19,10 @@ html, body {
 * {
     font-family:  "OpenSans", serif;
 }
-.serif {
+.talkTitleText {
     font-family:  "Averia", "OpenSans", serif;
     letter-spacing: 0.1em;
+    font-size:20px;
 } 
 .skinny {
     font-family:  "Amatic", "OpenSans", serif;

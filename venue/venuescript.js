@@ -42,7 +42,7 @@ $(document).ready(function()
     {
         $.ajax(
         {
-            url: "php/showbox.php",
+            url: "ajax/showbox.php",
             cache: false,
             success: function(html)
             {
@@ -55,7 +55,7 @@ $(document).ready(function()
         {
             $.ajax(
             {
-                url: "php/talkreload.php",
+                url: "ajax/talkreload.php",
                 cache: false,
                 success: function(html)
                 {
@@ -79,7 +79,7 @@ $(document).ready(function()
 
         $.ajax(
         {
-            url: "php/talktitleprevious.php",
+            url: "ajax/talktitleprevious.php",
             cache: false,
             success: function(html)
             {
@@ -88,7 +88,7 @@ $(document).ready(function()
         });
         $.ajax(
         {
-            url: "php/talkpreviousbutton.php",
+            url: "ajax/talkpreviousbutton.php",
             cache: false,
             success: function(html)
             {
@@ -97,7 +97,7 @@ $(document).ready(function()
         });
         $.ajax(
         {
-            url: "php/talknextbutton.php",
+            url: "ajax/talknextbutton.php",
             cache: false,
             success: function(html)
             {
@@ -106,7 +106,7 @@ $(document).ready(function()
         });
         $.ajax(
         {
-            url: "php/talkpostprevious.php",
+            url: "ajax/talkpostprevious.php",
             cache: false,
             success: function(html)
             {
@@ -118,7 +118,7 @@ $(document).ready(function()
     {
         $.ajax(
         {
-            url: "php/talktitlenext.php",
+            url: "ajax/talktitlenext.php",
             cache: false,
             success: function(html)
             {
@@ -127,7 +127,7 @@ $(document).ready(function()
         });
         $.ajax(
         {
-            url: "php/talkpreviousbutton.php",
+            url: "ajax/talkpreviousbutton.php",
             cache: false,
             success: function(html)
             {
@@ -136,7 +136,7 @@ $(document).ready(function()
         });
                 $.ajax(
         {
-            url: "php/talknextbutton.php",
+            url: "ajax/talknextbutton.php",
             cache: false,
             success: function(html)
             {
@@ -145,7 +145,7 @@ $(document).ready(function()
         });
         $.ajax(
         {
-            url: "php/talkpostnext.php",
+            url: "ajax/talkpostnext.php",
             cache: false,
             success: function(html)
             {
@@ -200,7 +200,7 @@ $(document).ready(function()
     $(document).on("click","#watchPrevious", function()    {
         $.ajax(
         {
-            url: "php/watchprevious.php",
+            url: "ajax/watchprevious.php",
             cache: false,
             success: function(html)
             {
@@ -212,7 +212,7 @@ $(document).ready(function()
     $(document).on("click","#watchNext", function()    {
         $.ajax(
         {
-            url: "php/watchnext.php",
+            url: "ajax/watchnext.php",
             cache: false,
             success: function(html)
             {
@@ -247,7 +247,7 @@ $(document).ready(function()
     $(document).on("click","#showPrevious", function()    {
         $.ajax(
         {
-            url: "php/showprevious.php",
+            url: "ajax/showprevious.php",
             cache: false,
             success: function(html)
             {
@@ -260,7 +260,7 @@ $(document).ready(function()
     {
         $.ajax(
         {
-            url: "php/shownext.php",
+            url: "ajax/shownext.php",
             cache: false,
             success: function(html)
             {
@@ -298,7 +298,7 @@ $(document).ready(function()
     $(document).on("click","#shoutPrevious", function()    {
         $.ajax(
         {
-            url: "php/shoutprevious.php",
+            url: "ajax/shoutprevious.php",
             cache: false,
             success: function(html)
             {
@@ -309,7 +309,7 @@ $(document).ready(function()
     $(document).on("click","#shoutNext", function()    {
         $.ajax(
         {
-            url: "php/shoutnext.php",
+            url: "ajax/shoutnext.php",
             cache: false,
             success: function(html)
             {
@@ -342,7 +342,7 @@ $(document).ready(function()
     {
         $.ajax(
         {
-            url: "php/chatlogger.php",
+            url: "ajax/chatlogger.php",
             cache: false,
             success: function(html)
             {
@@ -375,7 +375,7 @@ $(document).ready(function()
 
 
     $("#leaveControl").click(function(){
-        window.location = 'php/leave.php';   
+        window.location = 'ajax/leave.php';   
     });
 
 

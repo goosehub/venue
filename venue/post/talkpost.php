@@ -7,14 +7,11 @@ include '../connect.php';
 {
 	header("/venue/index.php");
 
-$title = $_POST['title'];
-// $post = $_POST['post'];
-$post = $_POST['post'];
-$title = htmlentities($title);
-$post = htmlentities($post);
+$title = mysqli_real_escape_string($con, $_POST['title']);
+$post = mysqli_real_escape_string($con, $_POST['post']);
       $operation = "INSERT INTO talk (title, user, post)
                           VALUES('". $title ."','". $_SESSION['name'] ."', '". $post ."');";
-                          
+
 $result = mysqli_query($con, $operation); 
 
 }

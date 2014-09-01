@@ -55,24 +55,24 @@ else{
     <span id="talkPostTitle">
         <div class="col-md-2 col-xs-2">
     <span id="talkPreviousButton">
-        <?php include 'php/talkpreviousbuttonload.php' ?>
+        <?php include 'ajax/talkpreviousbuttonload.php' ?>
     </span>
     </div>
     <div class="col-md-8 col-xs-8">
     <span id="talkTitleContainer">
-        <?php include 'php/talktitleload.php' ?>
+        <?php include 'ajax/talktitleload.php' ?>
     </span>
     </div>
     <div class="col-md-2 col-xs-2">
     <span id="talkNextButton">
-        <?php include 'php/talknextbuttonload.php' ?>
+        <?php include 'ajax/talknextbuttonload.php' ?>
     </span>
     </div>  	</div>
         </span>
                 <!-- talk post -->
       	<div id="talkScroll">
       	<span id="talkPostContainer">
-        <?php include 'php/talkpostload.php' ?>
+        <?php include 'ajax/talkpostload.php' ?>
               	</span>
       	</div>
             <!-- talk controls -->
@@ -96,7 +96,7 @@ else{
 
       							<!-- watch -->
 <span id="watchContainer">
-<?php include'php/watchload.php' ?>
+<?php include'ajax/watchload.php' ?>
 </span>
 
 
@@ -123,7 +123,7 @@ else{
 		<!-- showBox also acts as control panel -->
 <div id="showBox">
 <span id="showContainer">
-<?php include 'php/showload.php' ?>
+<?php include 'ajax/showload.php' ?>
 </span>
 </div>
     </center></div>
@@ -141,7 +141,7 @@ else{
 
       <div id="shoutBox">
       <span id="shoutContainer">
-      <?php include 'php/shoutload.php' ?>
+      <?php include 'ajax/shoutload.php' ?>
   </span>
 </div>
       	</div>
