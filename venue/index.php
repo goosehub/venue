@@ -6,8 +6,8 @@
 venue
 </title>
     <!-- bootstrap style -->
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-<!-- <link type="text/css" rel="stylesheet" href="resources/bootstrap.css"> -->
+<!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"> -->
+<link type="text/css" rel="stylesheet" href="resources/bootstrap.css">
   	<!-- custom stylesheet -->
 <link type="text/css" rel="stylesheet" href="venuestyle.css">
 <link type="text/css" rel="stylesheet" href="responsive/desktopStyle.css">
@@ -178,13 +178,12 @@ Loading...
 } //no content after this bracket 
 ?>
   <!-- jQuery -->
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js"></script>
-<!-- <script type="text/javascript" src="resources/jquery.js"></script> -->
+<!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js"></script> -->
+<!-- <script src="//code.jquery.com/jquery-1.11.0.min.js"></script> -->
+<script type="text/javascript" src="resources/jquery-1.8.3.min.js"></script>
  <!-- Bootstrap script -->
-<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-<!-- <script type="text/javascript" src="resources/bootstrap.js"></script> -->
+<script type="text/javascript" src="resources/bootstrap.js"></script>
 <script type="text/javascript" src="resources/ajaxfileupload.js"></script>
-<!-- <script type="text/javascript" src="fitvids.js"></script> -->
 <script type="text/javascript" src="venuescript.js"></script>
 
 </body></html>
