@@ -8,12 +8,12 @@ include '../connect.php';
 
 $link = $_POST['link'];
 $title = $_POST['title'];
-$link = htmlentities($link); //breaks the link
-$title = htmlentities($title);
-      $operationShout = "INSERT INTO shout (link, title)
+$link = mysqli_real_escape_string($con, $link);
+$title = mysqli_real_escape_string($con, $title);
+      $operation = "INSERT INTO shout (link, title)
                           VALUES('". $link ."', '". $title ."');";
                           
-$result = mysqli_query($con, $operationShout); 
+$result = mysqli_query($con, $operation); 
 
 }
 

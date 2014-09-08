@@ -11,7 +11,6 @@ $title = mysqli_real_escape_string($con, $_POST['title']);
 $post = mysqli_real_escape_string($con, $_POST['post']);
       $operation = "INSERT INTO talk (title, user, post)
                           VALUES('". $title ."','". $_SESSION['name'] ."', '". $post ."');";
-
 $result = mysqli_query($con, $operation); 
 
 }

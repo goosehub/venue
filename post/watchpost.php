@@ -8,12 +8,11 @@ include '../connect.php';
 
 //video process
 $watchid = $_POST['watchid'];
-$watchid = htmlentities($watchid);
-//update
-      $operationVideo = "INSERT INTO watch (watchid)
+$watchid = mysqli_real_escape_string($con, $watchid);
+      $operation = "INSERT INTO watch (watchid)
                           VALUES('". $watchid ."');";
                           
-$result = mysqli_query($con, $operationVideo);   
+$result = mysqli_query($con, $operation);   
 }
 
 

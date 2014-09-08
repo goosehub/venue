@@ -35,7 +35,8 @@ if ($resultwatch = mysqli_query($con, $sql))
 {
           while($row = mysqli_fetch_assoc($resultwatch)) 
           {
-$_SESSION['watchid'] = $row['id'];
+      $_SESSION['watchid'] = $row['id'];
+      // $row['watchid'] = htmlentities($row['watchid']); //does not seem to be needed
   echo '<iframe width="80%" height="250" src="//www.youtube.com/embed/'.trim($row['watchid']).'" frameborder="0" allowfullscreen></iframe>';
 }
 }

@@ -39,6 +39,7 @@ if ($result = mysqli_query($con, $sql))
 {
           while($row = mysqli_fetch_assoc($result)) 
           {
+      // $row['watchid'] = htmlentities($row['watchid']); //does not seem to be needed
   echo '<iframe width="80%" height="250" src="//www.youtube.com/embed/'.trim($row['watchid']).'?autoplay=1" frameborder="0" allowfullscreen></iframe>';
           }
 }

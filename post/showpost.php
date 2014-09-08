@@ -46,6 +46,7 @@ if ((($_FILES["file"]["type"] == "image/gif")
 }
 
 $filename = $_FILES["file"]["name"];
+$filename = mysqli_real_escape_string($con, $filename);
 $operation = "INSERT INTO
                     image(filename)
                 VALUES('". $filename . "');";

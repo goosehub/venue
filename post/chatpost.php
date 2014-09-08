@@ -8,12 +8,13 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 {
 	header("Location: /venue/index.php");
 
-    $message = $_POST['text'];
-    $message = htmlentities($message);
+	$name = $_SESSION['name'];
+	$message = $_POST['text'];
+	$message = mysqli_real_escape_string($con, $message);
+			$operation = "INSERT INTO
+                chat(user, message)
+            VALUES('$name', '$message')"; 
+			$result = mysqli_query($con, $operation);
 
-				$operation = "INSERT INTO
-                    chat(user, message)
-                VALUES('". $_SESSION['name'] ."', '". $message . "');";
-				$result = mysqli_query($con, $operation); 
 }  
 ?>

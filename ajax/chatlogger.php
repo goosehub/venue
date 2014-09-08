@@ -10,10 +10,12 @@ if ($result = mysqli_query($con, $sql))
           while($row = mysqli_fetch_assoc($result)) 
           {
                   if (! $row['user'] == "" && ! $row['message'] == "") {
+                    $message = $row['message'];
+                    $message = htmlentities($message);
                     echo '<strong>
                     <font class="chatName">'.$row['user'].'</font>
                       </strong><br><font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                      '.nl2br($row['message']).'<font><br>';
+                      '.nl2br($message).'<font><br>';
                     }
           }
 }

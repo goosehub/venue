@@ -48,6 +48,9 @@ if ($resultshout = mysqli_query($con, $sql))
           while($row = mysqli_fetch_assoc($resultshout)) 
           {
 $aLink = trim($row['link']);
+$aLink = htmlentities($aLink);
+$row['title'] = htmlentities($row['title']);
+
   echo '<center>
   <font size="4" class="shoutTitleFont">
   <a target="_blank" href="'.$aLink.'">

@@ -21,6 +21,9 @@ if ($result = mysqli_query($con, $sql))
           {
 $_SESSION['shoutid'] = $row['id']; 
 $aLink = trim($row['link']);
+$aLink = htmlentities($aLink);
+$row['title'] = htmlentities($row['title']);
+
   echo '<center>
   <font size="4" class="shoutTitleFont">
   <a target="_blank" href="'.$aLink.'">
