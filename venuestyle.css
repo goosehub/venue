@@ -58,11 +58,18 @@ input {
 }
 #centerDiv {
 	Display: inline;
-
 }
 .videoButtons {
 	margin-top:-250px;
 }
+
+.showButtonsPre {
+    float: left;
+}
+.showButtonsNext {
+    float: right;
+}
+
 #calendar {
 	Position: absolute;
 	Top: 10px;

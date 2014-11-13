@@ -23,9 +23,9 @@ WHERE id = ( SELECT MIN(id) FROM image ) ;";
           while($row = mysqli_fetch_assoc($result)) 
           {
             if($row['id'] != $_SESSION['showid']) {
-              echo '<img id="showPrevious" width="8%" src="banners/prev.png">';
+              echo '<img id="showPrevious" width="8%" src="banners/prev.png" class="showButtonsPre">';
             } else {
-              echo '<img width="8%" src="banners/prev.png" class="disabled">';
+              echo '<img width="8%" src="banners/prev.png" class="disabled showButtonsPre">';
             }
             }
           }
@@ -42,6 +42,6 @@ if ($result = mysqli_query($con, $sql))
           }
 }
 
-              echo '<img id="showNext" width="8%" src="banners/next.png">';
+              echo '<img id="showNext" width="8%" src="banners/next.png" class="showButtonsNext">';
 
 ?>

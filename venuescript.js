@@ -32,8 +32,8 @@ var shoutPostBox = '<form action="" method="post" enctype="multipart/form-data" 
 var scheduleFoundation = '<div id="scheduleOverlap"><div id="scheduleDisplay">' + 
 '</div></div>';
 
-var scheduleDisplay = '<img src="banners/august.jpg" class="img-responsive" alt="Responsive image">' + 
-'<button type="button" id="scheduleReturn" class="btn btn-lg active shadow">Return</button>';
+var scheduleDisplay = '<button type="button">This feature is no longer supported</button>' + 
+'</br><button type="button" id="scheduleReturn" class="btn btn-lg active shadow">Return</button>';
 
 $(document).ready(function()
 {
