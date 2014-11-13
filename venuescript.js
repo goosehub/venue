@@ -4,8 +4,8 @@ var talkPostTitle = '<center><form action="" method="post" enctype="multipart/fo
 var talkPostBox = 
 '<center><br><textarea form="talkForm" name="post" class="form-control" rows="16" id="talkContent" placeholder="1000 character minimum" /></textarea>';
 
-var talkPostControl = '<br><button type="button" class="btn btn-lg active" id="talkContribute" >Contribute</button></form></center>' + 
-'<button class="disabled"></button> <button type="button" class="btn btn-lg active nevermind">nevermind</button>';
+var talkPostControl = '<br><button type="button" class="btn btn-lg " id="talkContribute" >Contribute</button></form></center>' + 
+'<button class="disabled"></button> <button type="button" class="btn btn-lg  nevermind">nevermind</button>';
 
 var watchPostBox =  '<img src="/venue/banners/videoid.jpg" class="img-responsive" alt="Responsive image"><br>' + 
 '<form action="" method="post" enctype="multipart/form-data" id="watchForm">' + 
@@ -33,7 +33,7 @@ var scheduleFoundation = '<div id="scheduleOverlap"><div id="scheduleDisplay">' 
 '</div></div>';
 
 var scheduleDisplay = '<button type="button">This feature is no longer supported</button>' + 
-'</br><button type="button" id="scheduleReturn" class="btn btn-lg active shadow">Return</button>';
+'</br><button type="button" id="scheduleReturn" class="btn btn-lg  shadow">Return</button>';
 
 $(document).ready(function()
 {
@@ -351,7 +351,7 @@ $(document).ready(function()
             }
         });
     }
-    setInterval(loadLog, 500); //refresh every half second 
+    setInterval(loadLog, 2000); //refresh every half second 
     //chat input
     $("#submitChat").click(function()
     {

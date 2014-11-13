@@ -11,11 +11,11 @@ $sql = "SELECT *
           while($row = mysqli_fetch_assoc($result)) 
           {
             if($row['id'] != $_SESSION['talkid']) {
-    echo '<button type="button" class="btn btn-default btn-default active" id="talkPrevious">
+    echo '<button type="button" class="btn btn-default btn-default " id="talkPrevious">
     <font size="6"><span class="glyphicon glyphicon-arrow-left"></span></font>
     </button>';
             } else {
-    echo '<button type="button" class="btn btn-default btn-default active disabled">
+    echo '<button type="button" class="btn btn-default btn-default  disabled">
     <font size="6"><span class="glyphicon glyphicon-arrow-left"></span></font>
     </button>';
             }

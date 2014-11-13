@@ -78,7 +78,7 @@ else{
             <!-- talk controls -->
         <center>
         <span id="talkPostControl">
-<button type="button" id="talkControl" class="btn btn-lg active">Talk</button>
+<button type="button" id="talkControl" class="btn btn-lg ">Talk</button>
 </span>
 </center>
 </span>
@@ -105,14 +105,14 @@ else{
 								<!-- controls and input display-->
 <div id="inputBox">
 <br><form>
-<button type="button" id="watchControl" class="btn btn-default active shadow">Watch</button>
-<button type="button" id="showControl" class="btn btn-default active shadow">Show</button>
-<button type="button" id="shoutControl" class="btn btn-default active shadow">Shout</button>
+<button type="button" id="watchControl" class="btn btn-default  shadow">Watch</button>
+<button type="button" id="showControl" class="btn btn-default  shadow">Show</button>
+<button type="button" id="shoutControl" class="btn btn-default  shadow">Shout</button>
 <!--
-<button type="button" id="shareControl" class="btn btn-default active shadow">Share</button>
+<button type="button" id="shareControl" class="btn btn-default  shadow">Share</button>
 -->
-<button type="button" id="scheduleControl" class="btn btn-default active shadow">Schedule</button>
-<button type="button" id="leaveControl" class="btn btn-default active shadow">Leave</button>
+<button type="button" id="scheduleControl" class="btn btn-default  shadow">Schedule</button>
+<button type="button" id="leaveControl" class="btn btn-default  shadow">Leave</button>
 </form><br>
 </div>
 

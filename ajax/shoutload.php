@@ -22,7 +22,7 @@ $sql = "SELECT *
             if($row['id'] != $_SESSION['shoutid']) {
               echo '<div class="row">
   <div class="col-md-2 col-xs-2">
-    <button type="button" class="btn btn-default btn-default active" id="shoutPrevious">
+    <button type="button" class="btn btn-default btn-default " id="shoutPrevious">
     <font size="6"><span class="glyphicon glyphicon-arrow-left"></span></font>
     </button>
   </div>
@@ -30,7 +30,7 @@ $sql = "SELECT *
             } else {
               echo '<div class="row">
   <div class="col-md-2 col-xs-2">
-    <button type="button" class="btn btn-default btn-default active disabled">
+    <button type="button" class="btn btn-default btn-default  disabled">
     <font size="6"><span class="glyphicon glyphicon-arrow-left"></span></font>
     </button>
   </div>
@@ -70,13 +70,13 @@ $sql = "SELECT *
           {
             if($row['id'] != $_SESSION['shoutid']) {
               echo '</div><div class="col-md-2 col-xs-2">
-    <button type="button" class="btn btn-default btn-default active" id="shoutNext">
+    <button type="button" class="btn btn-default btn-default " id="shoutNext">
     <font size="6"><span class="glyphicon glyphicon-arrow-right"></span></font>
     </button>
   </div>';
             } else {
               echo '</div><div class="col-md-2 col-xs-2">
-    <button type="button" class="btn btn-default btn-default active disabled">
+    <button type="button" class="btn btn-default btn-default  disabled">
     <font size="6"><span class="glyphicon glyphicon-arrow-right"></span></font>
     </button>
   </div>';

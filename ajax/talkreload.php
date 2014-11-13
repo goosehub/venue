@@ -27,11 +27,11 @@ $sql = "SELECT *
           while($row = mysqli_fetch_assoc($result)) 
           {
             if($row['id'] != $_SESSION['talkid']) {
-    echo '<button type="button" class="btn btn-default btn-default active" id="talkPrevious">
+    echo '<button type="button" class="btn btn-default btn-default " id="talkPrevious">
     <font size="6"><span class="glyphicon glyphicon-arrow-left"></span></font>
     </button>';
             } else {
-    echo '<button type="button" class="btn btn-default btn-default active disabled">
+    echo '<button type="button" class="btn btn-default btn-default  disabled">
     <font size="6"><span class="glyphicon glyphicon-arrow-left"></span></font>
     </button>';
             }
@@ -70,11 +70,11 @@ $sql = "SELECT *
           while($row = mysqli_fetch_assoc($result)) 
           {
             if($row['id'] != $_SESSION['talkid']) {
-    echo '<button type="button" class="btn btn-default btn-default active" id="talkNext">
+    echo '<button type="button" class="btn btn-default btn-default " id="talkNext">
     <font size="6"><span class="glyphicon glyphicon-arrow-right"></span></font>
     </button>';
             } else {
-    echo '<button type="button" class="btn btn-default btn-default active disabled">
+    echo '<button type="button" class="btn btn-default btn-default  disabled">
     <font size="6"><span class="glyphicon glyphicon-arrow-right"></span></font>
     </button>';
             }
@@ -108,7 +108,7 @@ $finalPost = str_replace("\t",'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&
 			<!-- talk controls -->
 			<center>
 			<span id="talkPostControl">
-			<button type="button" id="talkControl" class="btn btn-lg active">Talk</button>
+			<button type="button" id="talkControl" class="btn btn-lg ">Talk</button>
 			</span>
 			</center>';
 
